@@ -1,0 +1,69 @@
+{
+	"apiVersion": "1",
+	"name": "psb/parallax",
+	"title": "Parallax Section",
+	"description": "Parallax scrolling effects in section.",
+	"category": "widgets",
+	"keywords": [
+		"parallax scroll",
+		"background effect",
+		"scrolling effect"
+	],
+	"textdomain": "parallax-section",
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
+		"cId": {
+			"type": "string",
+			"default": ""
+		},
+		"speed": {
+			"type": "number",
+			"default": -1
+		},
+		"verticalAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"textAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"background": {
+			"type": "object",
+			"default": {
+				"type": "image",
+				"image": {
+					"url": "https://i.ibb.co/b18MWMw/open-space-office.jpg"
+				}
+			}
+		},
+		"minHeight": {
+			"type": "string",
+			"default": "700px"
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"vertical": "20px",
+				"horizontal": "30px"
+			}
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"html": false
+	},
+	"example": {
+		"attributes": {
+			"preview": true,
+			"sourceType": "link"
+		}
+	},
+	"editorScript": "file:../dist/editor.js"
+}
