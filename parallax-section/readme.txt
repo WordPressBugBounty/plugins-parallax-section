@@ -3,7 +3,7 @@ Contributors: bplugins, abuhayat, charlescormier
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.2+
-Tested up to: 6.6.2
+Tested up to: 6.7.2
 Stable tag: 1.0.9
 Requires PHP: 7.1
 License: GPLv3 or later
@@ -137,38 +137,4 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 * Reduce PHP Code
 
 = 1.0.0 =
-* Initial Release
-
-
-== Upgrade Notice ==
-
-= 1.0.9 =
-* Fix Iframe issue
-
-= 1.0.8 =
-* Reduce Dependency
-
-= 1.0.7 =
-* Fix issue
-
-= 1.0.6 =
-* Initial height
-
-= 1.0.5 =
-* Not load scripts if block is not used
-
-= 1.0.4 =
-* Add translate feature
-
-= 1.0.3 =
-* Fix Dependency
-
-= 1.0.2 =
-* Reduce PHP Code
-* Performance Improvement
-
-= 1.0.1 =
-* Reduce PHP Code
-
-= 1.0.0 =
-* Initial Release
+* Initial Release.
