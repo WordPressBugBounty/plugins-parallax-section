@@ -1,10 +1,10 @@
-=== Parallax Section block - Parallax scrolling effects in section. ===
-Contributors: bplugins, abuhayat, charlescormier
+=== Parallax Section Block – Add Parallax Scrolling Effects to Sections. ===
+Contributors: bplugins, abuhayat, charlescormier, sojibislam9878, freemius
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
-Requires at least: 6.2+
-Tested up to: 6.7.2
-Stable tag: 1.0.9
+Requires at least: 6.5+
+Tested up to: 6.9
+Stable tag: 2.0.2
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -32,31 +32,31 @@ You can easily create a parallax section with this plugin.
 - You can change block settings from the right-side settings sidebar.
 - Enjoy!
 
-* For installation help click on Installation Tab
+* For installation help click on Installation tab
 
 
 = Feedback =
 - Did you like this plugin? Dislike it? Do you have a feature request? [Please share your feedback with us](mailto:support@bplugins.com 'Send feedback')
 
 
-### ⭐ Check out the Parent Plugin of this plugin-
+### Check out the Parent Plugin of this plugin-
 
-🔥 **[B Blocks](https://bblockswp.com)** – Best gutenberg blocks collections for WordPress.
+[**B Blocks**](https://bblockswp.com) – A blocks collection and page building tool for Gutenberg.
 
 
-### ⭐ Check out our other WordPress Plugins-
+### Check out our other WordPress Plugins-
 
-🔥 **[Html5 Audio Player](https://bplugins.com/products/html5-audio-player)** – Best audio player plugin for WordPress.
+[**Html5 Video Player**](https://bplugins.com/products/html5-video-player/) – Display videos as single and playlist in multiple skins.
 
-🔥 **[Html5 Video Player](https://bplugins.com/products/html5-video-player)** – Best video player plugin for WordPress.
+[**PDF Poster**](https://bplugins.com/products/pdf-poster/) – Display/Embed PDF files with different styles.
 
-🔥 **[PDF Poster](https://bplugins.com/products/pdf-poster)** – A fully-featured PDF Viewer Plugin for WordPress.
+[**Html5 Audio Player**](https://bplugins.com/products/html5-audio-player/) – Listen audios with awesome visuals.
 
-🔥 **[Document Embedder](https://bplugins.com/products/document-embedder)** – Best WordPress Document Embedder Plugin.
+[**StreamCast**](https://bplugins.com/products/streamcast-radio-player/) – Customizable radio player with different skins.
 
-🔥 **[3D Viewer](https://bplugins.com/products/3d-viewer)** – Display interactive 3D models on the webs.
+[**3D Viewer**](https://bplugins.com/products/3d-viewer/) – Embed 3D models and 3D products with interaction.
 
-🔥 **[Advanced Post Block](https://bplugins.com/products/advanced-post-block)** – Best Post Display Plugin for WordPress.
+[**Advanced Post Block**](https://bplugins.com/products/advanced-post-block/) – Show posts and custom posts in different layouts.
 
 
 == Installation ==
@@ -99,6 +99,10 @@ You can use unlimited times as you want.
 
 You can post your questions on the [support forum here](https://wordpress.org/support/plugin/parallax-section/)
 
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the Parallax Section block – Parallax scrolling effects in section. plugin through the [Patchstack Vulnerability Disclosure Program](https://patchstack.com/database/vdp/9e5fc6a7-396f-420f-a049-09ff1c112b7f). The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
+
 
 == Screenshots ==
 
@@ -107,6 +111,20 @@ You can post your questions on the [support forum here](https://wordpress.org/su
 
 
 == Changelog ==
+
+= 2.0.2 =
+ * Black Friday Sale Link Added
+
+= 2.0.1 =
+ * Update Freemius Lite SDK
+
+= 2.0.0 =
+* 5 New Theme Added
+1. Blur Effect Parallax
+2. Vertical Parallax
+3. Particle Parallax
+4. Three Image Parallax
+5. Row Scroll Parallax
 
 = 1.0.9 =
 * Fix Iframe issue
