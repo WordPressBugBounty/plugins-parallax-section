@@ -2,7 +2,7 @@
 
 if ( !defined( 'ABSPATH' ) ) { exit; }
 
-class Menu {
+class psbMenu {
 	public function __construct() {
 		add_action( 'admin_menu', [ $this, 'adminMenu' ] );
 		add_action( 'admin_enqueue_scripts', [$this, 'adminEnqueueScripts'] );
@@ -34,36 +34,26 @@ class Menu {
 		}
 	}
 
-// 	public function adminMenu() {
-//     add_menu_page(
-//         __('Parallax Section', 'parallax-section'), // Page title
-//         __('Parallax Section', 'parallax-section'), // Menu title
-//         'manage_options',                           // Capability
-//         'parallax-section-dashboard',               // Menu slug
-//         [$this, 'renderDashboardPage'],             // Callback function
-//         'dashicons-images-alt2',                    // Icon (Dashicons or URL)
-//         20                                          // Position
-//     );
-// }
-
 
 	public function renderDashboardPage(){ ?>
 		<div
-			id='apbDashboard'
+			id='psbDashboard'
 			data-info='<?php echo esc_attr( wp_json_encode( [
 				'version' => PSB_VERSION,
 				'isPremium' => psIsPremium(),
-				'hasPro' => PARALLAX_HAS_PRO
+				'hasPro' => PARALLAX_HAS_PRO,
+				'licenseActiveNonce' => wp_create_nonce('bplLicenseActive'),
+				'nonce' => wp_create_nonce( 'psbCreatePage' ),
 			] ) ); ?>'
 		></div>
 	<?php }
 
 	function adminEnqueueScripts( $hook ) {
 		if( strpos( $hook, 'parallax-section' ) ){
-			wp_enqueue_style( 'apb-admin-dashboard', PSB_DIR_URL . 'build/admin-dashboard.css', [], PSB_VERSION );
-			wp_enqueue_script( 'apb-admin-dashboard', PSB_DIR_URL . 'build/admin-dashboard.js', [ 'react', 'react-dom' ], PSB_VERSION, true );
-			wp_set_script_translations( 'apb-admin-dashboard', 'parallax-section', PSB_DIR_PATH . 'languages' );
+			wp_enqueue_style( 'psb-admin-dashboard', PSB_DIR_URL . 'build/admin-dashboard.css', [], PSB_VERSION );
+			wp_enqueue_script( 'psb-admin-dashboard', PSB_DIR_URL . 'build/admin-dashboard.js', [ 'react', 'react-dom', 'wp-util' ], PSB_VERSION, true );
+			wp_set_script_translations( 'psb-admin-dashboard', 'parallax-section', PSB_DIR_PATH . 'languages' );
 		}
 	}
 }
-new Menu();
+new psbMenu();

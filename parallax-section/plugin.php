@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Parallax Section - Block
  * Description: Makes background element scrolls slower than foreground content.
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -25,16 +25,11 @@ if ( function_exists( 'ps_fs' ) ) {
         }
     } );
 } else {
-    /**
-     * DO NOT REMOVE THIS IF, IT IS ESSENTIAL FOR THE
-     * `function_exists` CALL ABOVE TO PROPERLY WORK.
-     */
-    define( 'PSB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.2' ) );
+    define( 'PSB_VERSION', ( isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.0.3' ) );
     define( 'PSB_DIR_URL', plugin_dir_url( __FILE__ ) );
     define( 'PSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
     define( 'PARALLAX_HAS_PRO', file_exists( dirname( __FILE__ ) . '/freemius/start.php' ) );
     if ( !function_exists( 'ps_fs' ) ) {
-        // Create a helper function for easy SDK access.
         function ps_fs() {
             global $ps_fs;
             if ( !isset( $ps_fs ) ) {
@@ -71,9 +66,7 @@ if ( function_exists( 'ps_fs' ) ) {
             return $ps_fs;
         }
 
-        // Init Freemius.
         ps_fs();
-        // Signal that SDK was initiated.
         do_action( 'ps_fs_loaded' );
     }
     function psIsPremium() {
@@ -82,17 +75,40 @@ if ( function_exists( 'ps_fs' ) ) {
 
     // ... Your plugin's main file logic ...
     require_once PSB_DIR_PATH . 'includes/GetCSS.php';
+    if ( PARALLAX_HAS_PRO ) {
+        require_once PSB_DIR_PATH . 'includes/LicenseActivation.php';
+    }
     if ( !class_exists( 'PSBPlugin' ) ) {
         class PSBPlugin {
             function __construct() {
                 add_action( 'init', [$this, 'onInit'] );
                 add_action( 'enqueue_block_editor_assets', [$this, "enqueueBlockEditorAssets"] );
                 add_filter(
-                    'plugin_row_meta',
-                    [$this, 'pluginRowMeta'],
+                    'default_title',
+                    [$this, 'defaultTitle'],
                     10,
                     2
                 );
+                add_filter(
+                    'default_content',
+                    [$this, 'defaultContent'],
+                    10,
+                    2
+                );
+            }
+
+            function defaultTitle( $title, $post ) {
+                if ( 'page' === $post->post_type && isset( $_GET['title'] ) ) {
+                    return sanitize_text_field( wp_unslash( $_GET['title'] ) );
+                }
+                return $title;
+            }
+
+            function defaultContent( $content, $post ) {
+                if ( 'page' === $post->post_type && isset( $_GET['content'] ) ) {
+                    return wp_unslash( $_GET['content'] );
+                }
+                return $content;
             }
 
             function enqueueBlockEditorAssets() {
@@ -101,16 +117,6 @@ if ( function_exists( 'ps_fs' ) ) {
 
             function onInit() {
                 register_block_type( __DIR__ . '/build' );
-            }
-
-            function pluginRowMeta( $plugin_meta, $plugin_file ) {
-                if ( strpos( $plugin_file, 'parallax-section' ) !== false && time() < strtotime( '2025-12-05' ) ) {
-                    $new_links = array(
-                        'deal' => "<a href='https://bplugins.com/coupons/?from=plugins.php&plugin=parallax-section' target='_blank' style='font-weight: 600; color: #146ef5;'>🎉 Black Friday Sale - Get up to 80% OFF Now!</a>",
-                    );
-                    $plugin_meta = array_merge( $plugin_meta, $new_links );
-                }
-                return $plugin_meta;
             }
 
         }
