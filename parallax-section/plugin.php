@@ -43,7 +43,7 @@ if ( function_exists( 'ps_fs' ) ) {
                     'slug'                => 'parallax-section',
                     'type'                => 'plugin',
                     'public_key'          => 'pk_b230abfa498765ac9fd6a75cdfde2',
-                    'is_premium'          => true,
+                    'is_premium'          => false,
                     'premium_suffix'      => 'Pro',
                     'has_premium_version' => true,
                     'has_addons'          => false,
