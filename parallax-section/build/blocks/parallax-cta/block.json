@@ -1,0 +1,518 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "psb/parallax-cta",
+  "title": "Parallax CTA (Pro)",
+  "description": "Conversion CTA with a magnetic button, drifting aurora and scroll-converging orbs, in four styles.",
+  "category": "parallax-sections",
+  "version": "2.1.0",
+  "keywords": [
+    "cta",
+    "call to action",
+    "button",
+    "magnetic",
+    "conversion",
+    "banner",
+    "signup",
+    "parallax",
+    "aurora"
+  ],
+  "textdomain": "parallax-section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "styleSl": {
+      "type": "string",
+      "default": "styleDefault",
+      "enum": [
+        "styleDefault",
+        "styleOne",
+        "styleTwo",
+        "styleThree"
+      ]
+    },
+    "eyebrow": {
+      "type": "string",
+      "default": "Ready when you are"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Start building today"
+    },
+    "headingTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "text": {
+      "type": "string",
+      "default": "Spin up your first project in minutes — no credit card, cancel anytime."
+    },
+    "primaryText": {
+      "type": "string",
+      "default": "Get started free"
+    },
+    "primaryUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "primaryNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "showBtnArrow": {
+      "type": "boolean",
+      "default": true
+    },
+    "showSecondary": {
+      "type": "boolean",
+      "default": true
+    },
+    "secondaryText": {
+      "type": "string",
+      "default": "Talk to sales"
+    },
+    "secondaryUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "secondaryNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "showProof": {
+      "type": "boolean",
+      "default": true
+    },
+    "proofItems": {
+      "type": "array",
+      "default": [
+        {
+          "text": "Free 14-day trial"
+        },
+        {
+          "text": "No credit card required"
+        },
+        {
+          "text": "Cancel anytime"
+        }
+      ]
+    },
+    "contentAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "maxWidth": {
+      "type": "object",
+      "default": {
+        "desktop": "1080px",
+        "tablet": "100%",
+        "mobile": "100%"
+      }
+    },
+    "minHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "0px",
+        "tablet": "0px",
+        "mobile": "0px"
+      }
+    },
+    "contentGap": {
+      "type": "object",
+      "default": {
+        "desktop": "18px",
+        "tablet": "16px",
+        "mobile": "14px"
+      }
+    },
+    "actionsGap": {
+      "type": "object",
+      "default": {
+        "desktop": "32px",
+        "tablet": "28px",
+        "mobile": "24px"
+      }
+    },
+    "stackButtonsMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableMagnetic": {
+      "type": "boolean",
+      "default": true
+    },
+    "magneticStrength": {
+      "type": "number",
+      "default": 28
+    },
+    "magneticRadius": {
+      "type": "number",
+      "default": 160
+    },
+    "labelLag": {
+      "type": "number",
+      "default": 0.4
+    },
+    "enableGlow": {
+      "type": "boolean",
+      "default": true
+    },
+    "enableAurora": {
+      "type": "boolean",
+      "default": true
+    },
+    "auroraSpeed": {
+      "type": "number",
+      "default": 22
+    },
+    "auroraOpacity": {
+      "type": "number",
+      "default": 0.6
+    },
+    "enableOrbs": {
+      "type": "boolean",
+      "default": true
+    },
+    "orbConverge": {
+      "type": "number",
+      "default": 120
+    },
+    "orbOpacity": {
+      "type": "number",
+      "default": 0.5
+    },
+    "orbSize": {
+      "type": "object",
+      "default": {
+        "desktop": "320px",
+        "tablet": "260px",
+        "mobile": "200px"
+      }
+    },
+    "scrollParallax": {
+      "type": "boolean",
+      "default": true
+    },
+    "parallaxIntensity": {
+      "type": "number",
+      "default": 60
+    },
+    "bgParallax": {
+      "type": "boolean",
+      "default": true
+    },
+    "contentFloat": {
+      "type": "boolean",
+      "default": true
+    },
+    "touchParallax": {
+      "type": "boolean",
+      "default": true
+    },
+    "entrance": {
+      "type": "boolean",
+      "default": true
+    },
+    "entranceStagger": {
+      "type": "number",
+      "default": 0.09
+    },
+    "sectionPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "96px",
+          "right": "24px",
+          "bottom": "96px",
+          "left": "24px"
+        },
+        "tablet": {
+          "top": "72px",
+          "right": "20px",
+          "bottom": "72px",
+          "left": "20px"
+        },
+        "mobile": {
+          "top": "56px",
+          "right": "16px",
+          "bottom": "56px",
+          "left": "16px"
+        }
+      }
+    },
+    "sectionMargin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "tablet": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "mobile": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        }
+      }
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "#0b1020"
+      }
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#7c5cff"
+    },
+    "accentColor2": {
+      "type": "string",
+      "default": "#22d3ee"
+    },
+    "bandBackground": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "rgba(255,255,255,0.04)"
+      }
+    },
+    "bandBorderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "bandBorderColor": {
+      "type": "string",
+      "default": "rgba(255,255,255,0.1)"
+    },
+    "bandRadius": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "28px",
+          "right": "28px",
+          "bottom": "28px",
+          "left": "28px"
+        },
+        "tablet": {
+          "top": "24px",
+          "right": "24px",
+          "bottom": "24px",
+          "left": "24px"
+        },
+        "mobile": {
+          "top": "20px",
+          "right": "20px",
+          "bottom": "20px",
+          "left": "20px"
+        }
+      }
+    },
+    "bandPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "72px",
+          "right": "56px",
+          "bottom": "72px",
+          "left": "56px"
+        },
+        "tablet": {
+          "top": "56px",
+          "right": "36px",
+          "bottom": "56px",
+          "left": "36px"
+        },
+        "mobile": {
+          "top": "40px",
+          "right": "22px",
+          "bottom": "40px",
+          "left": "22px"
+        }
+      }
+    },
+    "bandShadow": {
+      "type": "array",
+      "default": [
+        {
+          "hOffset": "0px",
+          "vOffset": "30px",
+          "blur": "60px",
+          "spreed": "-30px",
+          "color": "rgba(0,0,0,0.6)",
+          "isInset": false
+        }
+      ]
+    },
+    "eyebrowTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 13,
+          "tablet": 12,
+          "mobile": 12
+        },
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "letterSpace": "0.08em"
+      }
+    },
+    "eyebrowColors": {
+      "type": "object",
+      "default": {
+        "color": "#c4b5fd",
+        "bg": "rgba(124,92,255,0.16)"
+      }
+    },
+    "headingTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 52,
+          "tablet": 40,
+          "mobile": 32
+        },
+        "fontWeight": 800,
+        "lineHeight": "1.1"
+      }
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#f8fafc"
+    },
+    "headingGradient": {
+      "type": "boolean",
+      "default": false
+    },
+    "textTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 18,
+          "tablet": 17,
+          "mobile": 16
+        },
+        "lineHeight": "1.6"
+      }
+    },
+    "textColor": {
+      "type": "string",
+      "default": "rgba(226,232,240,0.78)"
+    },
+    "buttonTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 16,
+          "tablet": 15,
+          "mobile": 15
+        },
+        "fontWeight": 700
+      }
+    },
+    "buttonPadding": {
+      "type": "object",
+      "default": {
+        "top": "16px",
+        "right": "30px",
+        "bottom": "16px",
+        "left": "30px"
+      }
+    },
+    "buttonRadius": {
+      "type": "object",
+      "default": {
+        "top": "12px",
+        "right": "12px",
+        "bottom": "12px",
+        "left": "12px"
+      }
+    },
+    "primaryColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bgType": "gradient",
+        "bg": "#7c5cff",
+        "gradient": "linear-gradient(120deg,#7c5cff 0%,#22d3ee 100%)"
+      }
+    },
+    "primaryHoverColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bgType": "gradient",
+        "bg": "#6d4bff",
+        "gradient": "linear-gradient(120deg,#6d4bff 0%,#06b6d4 100%)"
+      }
+    },
+    "secondaryStyle": {
+      "type": "string",
+      "default": "outline"
+    },
+    "secondaryColors": {
+      "type": "object",
+      "default": {
+        "color": "#e2e8f0",
+        "bg": "rgba(255,255,255,0)"
+      }
+    },
+    "secondaryHoverColors": {
+      "type": "object",
+      "default": {
+        "color": "#0b1020",
+        "bg": "#ffffff"
+      }
+    },
+    "proofIcon": {
+      "type": "string",
+      "default": "check"
+    },
+    "proofTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 14,
+          "tablet": 14,
+          "mobile": 13
+        },
+        "fontWeight": 500
+      }
+    },
+    "proofColor": {
+      "type": "string",
+      "default": "rgba(226,232,240,0.7)"
+    },
+    "proofIconColor": {
+      "type": "string",
+      "default": "#22d3ee"
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "heading": "Start building today"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

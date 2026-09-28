@@ -1,10 +1,10 @@
-=== Parallax Section Block – Add Parallax Scrolling Effects to Sections. ===
-Contributors: bplugins, abuhayat, charlescormier, sojibislam9878, freemius
+=== Parallax Section Block – Add Parallax Scrolling Effects to Sections ===
+Contributors: bplugins, abuhayat, charlescormier, sojibislam9878
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.5+
-Tested up to: 6.9
-Stable tag: 2.0.4
+Tested up to: 7.1
+Stable tag: 2.1.0
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,13 +21,18 @@ You can easily create a parallax section with this plugin.
 * Easy to use
 * It does not require much technical knowledge to use
 * It is lightweight because it relies on JavaScript
+* Parallax Tilt Card (Pro) — cards that tilt toward the pointer and drift on scroll, with image parallax and a glare sheen, in four styles.
+* Parallax Testimonials (Pro) — a 3D coverflow, stacked, spotlight or minimal testimonial carousel with autoplay and swipe.
+* Parallax CTA (Pro) — a conversion band with a magnetic button, animated aurora and converging orbs, in four styles.
+* Parallax Cube (Pro) — a 3D cube or prism that turns to reveal each content face, with tabs, drag and autoplay.
+* Parallax Skills Cloud (Pro) — skill bubbles that drift on a spring field and scatter from the cursor, in five styles.
 
 
 **[Demos](https://bblockswp.com/demo/parallax-section/)**
 
 
 = How to use =
-- First, install the Parallax Section plugin
+- First, install the Parallax Section plugin.
 - Add the Parallax Section block from the block category called "Widgets" in the Gutenberg editor.
 - You can change block settings from the right-side settings sidebar.
 - Enjoy!
@@ -112,6 +117,19 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 == Changelog ==
 
+= 2.1.0 - 28 September 2026 =
+* New Pro sections: Parallax Tilt Card, Testimonials, CTA, Cube and Skills Cloud — each with multiple style presets and tabbed General / Style settings
+* New: "Mouse scroll" pin mode for Testimonials and Cube — the section sticks while scrolling moves through the cards or turns the cube face by face
+* New: scroll parallax depth for Tilt Card, CTA, Cube and Skills Cloud, plus a floating effect for the Cube
+* New: use any Pro section in a Parallax Section shortcode via the new "Section Block" picker
+* New Scroll Zoom effect for the Parallax Section block (Pro)
+* Improved: parallax effects now play while editing in the block editor
+* Improved: section background images cover the section and stay in place on pinned sections
+* Improved: new default background image, refreshed block icons, and the Demos page now shows this plugin's demos
+* Accessibility: keyboard navigation, ARIA roles and live regions, and prefers-reduced-motion support across all sections
+* Performance: throttled, passive scroll handling on every effect
+* Security: all user links are scheme-validated before output
+
 = 2.0.4 =
  * Freemius SDK and Admin Dashboard Updated
 
@@ -162,3 +180,8 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 = 1.0.0 =
 * Initial Release.
+
+== Upgrade Notice ==
+
+= 2.1.0 =
+Five new Pro parallax sections (Tilt Card, Testimonials, CTA, Cube, Skills Cloud), new scroll effects, and parallax that now plays inside the block editor.

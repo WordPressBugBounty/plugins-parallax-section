@@ -1,0 +1,576 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "psb/parallax-cube",
+  "title": "Parallax Cube (Pro)",
+  "description": "A real 3D cube whose faces quarter-turn to swap content panels, lit as it spins, in four styles.",
+  "category": "parallax-sections",
+  "version": "2.1.0",
+  "keywords": [
+    "cube",
+    "3d",
+    "prism",
+    "rotator",
+    "tabs",
+    "showcase",
+    "carousel",
+    "parallax"
+  ],
+  "textdomain": "parallax-section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "styleSl": {
+      "type": "string",
+      "default": "styleDefault",
+      "enum": [
+        "styleDefault",
+        "styleOne",
+        "styleTwo",
+        "styleThree"
+      ]
+    },
+    "showHeader": {
+      "type": "boolean",
+      "default": true
+    },
+    "badge": {
+      "type": "string",
+      "default": "3D Showcase"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Every angle of the platform"
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Pick a side — the cube makes a quarter-turn to bring it to the front, catching the light as it goes."
+    },
+    "headingTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "faceTitleTag": {
+      "type": "string",
+      "default": "h3"
+    },
+    "faces": {
+      "type": "array",
+      "default": [
+        {
+          "image": "",
+          "imageAlt": "",
+          "eyebrow": "Performance",
+          "title": "Built for speed",
+          "text": "Sub-second loads on every page, on every device, everywhere in the world.",
+          "btnText": "Learn more",
+          "btnUrl": "#",
+          "newTab": false
+        },
+        {
+          "image": "",
+          "imageAlt": "",
+          "eyebrow": "Security",
+          "title": "Secure by default",
+          "text": "SSO, audit logs and granular permissions are switched on from day one.",
+          "btnText": "Learn more",
+          "btnUrl": "#",
+          "newTab": false
+        },
+        {
+          "image": "",
+          "imageAlt": "",
+          "eyebrow": "Scale",
+          "title": "Grows with you",
+          "text": "From your first user to your millionth, without a single rewrite.",
+          "btnText": "Learn more",
+          "btnUrl": "#",
+          "newTab": false
+        },
+        {
+          "image": "",
+          "imageAlt": "",
+          "eyebrow": "Teams",
+          "title": "Loved by teams",
+          "text": "Thoughtful workflows your whole team will actually enjoy using.",
+          "btnText": "Learn more",
+          "btnUrl": "#",
+          "newTab": false
+        }
+      ]
+    },
+    "showButtons": {
+      "type": "boolean",
+      "default": true
+    },
+    "showIndex": {
+      "type": "boolean",
+      "default": true
+    },
+    "maxWidth": {
+      "type": "object",
+      "default": {
+        "desktop": "1200px",
+        "tablet": "100%",
+        "mobile": "100%"
+      }
+    },
+    "columnGap": {
+      "type": "object",
+      "default": {
+        "desktop": "72px",
+        "tablet": "48px",
+        "mobile": "32px"
+      }
+    },
+    "cubeWidth": {
+      "type": "object",
+      "default": {
+        "desktop": "400px",
+        "tablet": "360px",
+        "mobile": "300px"
+      }
+    },
+    "cubeHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "400px",
+        "tablet": "360px",
+        "mobile": "300px"
+      }
+    },
+    "mediaHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "140px",
+        "tablet": "120px",
+        "mobile": "100px"
+      }
+    },
+    "contentAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "verticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "showNav": {
+      "type": "boolean",
+      "default": true
+    },
+    "showArrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "axis": {
+      "type": "string",
+      "default": "y"
+    },
+    "scrollMode": {
+      "type": "string",
+      "default": "pin",
+      "enum": [
+        "none",
+        "pin"
+      ]
+    },
+    "pinLength": {
+      "type": "number",
+      "default": 80
+    },
+    "pinMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "pinProgress": {
+      "type": "boolean",
+      "default": true
+    },
+    "autoplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoplayInterval": {
+      "type": "number",
+      "default": 5
+    },
+    "pauseOnHover": {
+      "type": "boolean",
+      "default": true
+    },
+    "drag": {
+      "type": "boolean",
+      "default": true
+    },
+    "duration": {
+      "type": "number",
+      "default": 0.8
+    },
+    "rotateEase": {
+      "type": "string",
+      "default": "cubic-bezier(0.34,1.36,0.64,1)"
+    },
+    "perspective": {
+      "type": "number",
+      "default": 1400
+    },
+    "lighting": {
+      "type": "boolean",
+      "default": true
+    },
+    "lightIntensity": {
+      "type": "number",
+      "default": 0.55
+    },
+    "tiltMax": {
+      "type": "number",
+      "default": 8
+    },
+    "scrollParallax": {
+      "type": "boolean",
+      "default": true
+    },
+    "parallaxIntensity": {
+      "type": "number",
+      "default": 60
+    },
+    "floatEffect": {
+      "type": "boolean",
+      "default": true
+    },
+    "floatDistance": {
+      "type": "number",
+      "default": 14
+    },
+    "floatSpeed": {
+      "type": "number",
+      "default": 6
+    },
+    "showShadow": {
+      "type": "boolean",
+      "default": true
+    },
+    "entrance": {
+      "type": "boolean",
+      "default": true
+    },
+    "sectionPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "96px",
+          "right": "24px",
+          "bottom": "96px",
+          "left": "24px"
+        },
+        "tablet": {
+          "top": "72px",
+          "right": "20px",
+          "bottom": "72px",
+          "left": "20px"
+        },
+        "mobile": {
+          "top": "56px",
+          "right": "16px",
+          "bottom": "56px",
+          "left": "16px"
+        }
+      }
+    },
+    "sectionMargin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "tablet": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "mobile": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        }
+      }
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "#0b1020"
+      }
+    },
+    "backdropOverlay": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "rgba(0,0,0,0)"
+      }
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#818cf8"
+    },
+    "shadowColor": {
+      "type": "string",
+      "default": "rgba(0,0,0,0.55)"
+    },
+    "headingTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 44,
+          "tablet": 36,
+          "mobile": 30
+        },
+        "fontWeight": 800,
+        "lineHeight": "1.15"
+      }
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#f8fafc"
+    },
+    "subheadingTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 18,
+          "tablet": 17,
+          "mobile": 16
+        },
+        "lineHeight": "1.6"
+      }
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": "rgba(226,232,240,0.72)"
+    },
+    "badgeColors": {
+      "type": "object",
+      "default": {
+        "color": "#c7d2fe",
+        "bg": "rgba(129,140,248,0.16)"
+      }
+    },
+    "faceBackground": {
+      "type": "object",
+      "default": {
+        "type": "gradient",
+        "gradient": "linear-gradient(150deg,#1e2547 0%,#111733 100%)"
+      }
+    },
+    "faceRadius": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "6px",
+          "right": "6px",
+          "bottom": "6px",
+          "left": "6px"
+        },
+        "tablet": {
+          "top": "6px",
+          "right": "6px",
+          "bottom": "6px",
+          "left": "6px"
+        },
+        "mobile": {
+          "top": "6px",
+          "right": "6px",
+          "bottom": "6px",
+          "left": "6px"
+        }
+      }
+    },
+    "facePadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "32px",
+          "right": "32px",
+          "bottom": "32px",
+          "left": "32px"
+        },
+        "tablet": {
+          "top": "28px",
+          "right": "28px",
+          "bottom": "28px",
+          "left": "28px"
+        },
+        "mobile": {
+          "top": "22px",
+          "right": "22px",
+          "bottom": "22px",
+          "left": "22px"
+        }
+      }
+    },
+    "faceBorderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "faceBorderColor": {
+      "type": "string",
+      "default": "rgba(129,140,248,0.35)"
+    },
+    "indexColor": {
+      "type": "string",
+      "default": "rgba(129,140,248,0.22)"
+    },
+    "eyebrowTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 12,
+          "tablet": 12,
+          "mobile": 11
+        },
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "letterSpace": "0.08em"
+      }
+    },
+    "eyebrowColors": {
+      "type": "object",
+      "default": {
+        "color": "#a5b4fc",
+        "bg": "rgba(129,140,248,0.14)"
+      }
+    },
+    "faceTitleTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 26,
+          "tablet": 24,
+          "mobile": 21
+        },
+        "fontWeight": 800,
+        "lineHeight": "1.2"
+      }
+    },
+    "faceTitleColor": {
+      "type": "string",
+      "default": "#f8fafc"
+    },
+    "faceTextTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 15,
+          "tablet": 15,
+          "mobile": 14
+        },
+        "lineHeight": "1.6"
+      }
+    },
+    "faceTextColor": {
+      "type": "string",
+      "default": "rgba(226,232,240,0.78)"
+    },
+    "navTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 16,
+          "tablet": 15,
+          "mobile": 14
+        },
+        "fontWeight": 600,
+        "lineHeight": "1.3"
+      }
+    },
+    "navColors": {
+      "type": "object",
+      "default": {
+        "color": "rgba(226,232,240,0.62)",
+        "bg": "rgba(255,255,255,0)"
+      }
+    },
+    "navActiveColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bg": "rgba(129,140,248,0.16)"
+      }
+    },
+    "arrowColors": {
+      "type": "object",
+      "default": {
+        "color": "#e0e7ff",
+        "bg": "rgba(129,140,248,0.18)"
+      }
+    },
+    "buttonTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 14,
+          "tablet": 14,
+          "mobile": 14
+        },
+        "fontWeight": 700
+      }
+    },
+    "buttonColors": {
+      "type": "object",
+      "default": {
+        "color": "#0b1020",
+        "bg": "#a5b4fc"
+      }
+    },
+    "buttonHoverColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bg": "#6366f1"
+      }
+    },
+    "buttonRadius": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "10px",
+        "bottom": "10px",
+        "left": "10px"
+      }
+    },
+    "buttonPadding": {
+      "type": "object",
+      "default": {
+        "top": "11px",
+        "right": "22px",
+        "bottom": "11px",
+        "left": "22px"
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "heading": "Parallax Cube"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

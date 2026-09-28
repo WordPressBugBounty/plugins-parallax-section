@@ -1,0 +1,509 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "psb/tilt-card",
+  "title": "Parallax Tilt Card (Pro)",
+  "description": "Tilt cards that lean toward the pointer with depth layers and a glare sheen, in four styles.",
+  "category": "parallax-sections",
+  "version": "2.1.0",
+  "keywords": [
+    "tilt",
+    "parallax",
+    "3d",
+    "card",
+    "hover",
+    "features",
+    "cta"
+  ],
+  "textdomain": "parallax-section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "styleSl": {
+      "type": "string",
+      "default": "styleDefault",
+      "enum": [
+        "styleDefault",
+        "styleOne",
+        "styleTwo",
+        "styleThree"
+      ]
+    },
+    "showHeader": {
+      "type": "boolean",
+      "default": true
+    },
+    "badge": {
+      "type": "string",
+      "default": "Featured"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Cards that move with you"
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Hover a card — it leans toward your pointer, its content lifts off the surface and a sheen follows along."
+    },
+    "headingTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "cardTitleTag": {
+      "type": "string",
+      "default": "h3"
+    },
+    "cards": {
+      "type": "array",
+      "default": [
+        {
+          "image": "",
+          "imageAlt": "",
+          "eyebrow": "Design",
+          "title": "Depth you can feel",
+          "text": "Layered content floats above the surface as the card tilts in 3D.",
+          "btnText": "Explore",
+          "btnUrl": "#",
+          "newTab": false
+        },
+        {
+          "image": "",
+          "imageAlt": "",
+          "eyebrow": "Motion",
+          "title": "Pointer-driven parallax",
+          "text": "Every card follows the cursor with a smooth, eased settle.",
+          "btnText": "See how",
+          "btnUrl": "#",
+          "newTab": false
+        },
+        {
+          "image": "",
+          "imageAlt": "",
+          "eyebrow": "Polish",
+          "title": "A glossy glare sheen",
+          "text": "A soft highlight tracks the pointer across the card face.",
+          "btnText": "Get started",
+          "btnUrl": "#",
+          "newTab": false
+        }
+      ]
+    },
+    "columns": {
+      "type": "object",
+      "default": {
+        "desktop": 3,
+        "tablet": 2,
+        "mobile": 1
+      }
+    },
+    "gap": {
+      "type": "object",
+      "default": {
+        "desktop": "28px",
+        "tablet": "24px",
+        "mobile": "20px"
+      }
+    },
+    "maxWidth": {
+      "type": "object",
+      "default": {
+        "desktop": "1200px",
+        "tablet": "100%",
+        "mobile": "100%"
+      }
+    },
+    "cardMinHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "420px",
+        "tablet": "380px",
+        "mobile": "340px"
+      }
+    },
+    "mediaHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "200px",
+        "tablet": "190px",
+        "mobile": "180px"
+      }
+    },
+    "mediaWidth": {
+      "type": "string",
+      "default": "45%"
+    },
+    "contentAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "verticalAlign": {
+      "type": "string",
+      "default": "bottom"
+    },
+    "showButtons": {
+      "type": "boolean",
+      "default": true
+    },
+    "showBtnArrow": {
+      "type": "boolean",
+      "default": true
+    },
+    "tiltMax": {
+      "type": "number",
+      "default": 12
+    },
+    "perspective": {
+      "type": "number",
+      "default": 900
+    },
+    "hoverScale": {
+      "type": "number",
+      "default": 1.03
+    },
+    "depth": {
+      "type": "number",
+      "default": 40
+    },
+    "tiltSpeed": {
+      "type": "number",
+      "default": 0.35
+    },
+    "tiltEase": {
+      "type": "string",
+      "default": "cubic-bezier(0.23,1,0.32,1)"
+    },
+    "reverseTilt": {
+      "type": "boolean",
+      "default": false
+    },
+    "glare": {
+      "type": "boolean",
+      "default": true
+    },
+    "glareIntensity": {
+      "type": "number",
+      "default": 0.35
+    },
+    "entrance": {
+      "type": "boolean",
+      "default": true
+    },
+    "entranceStagger": {
+      "type": "number",
+      "default": 0.1
+    },
+    "revealRepeat": {
+      "type": "boolean",
+      "default": false
+    },
+    "scrollDrift": {
+      "type": "boolean",
+      "default": true
+    },
+    "scrollTilt": {
+      "type": "boolean",
+      "default": false
+    },
+    "scrollImage": {
+      "type": "boolean",
+      "default": true
+    },
+    "scrollIntensity": {
+      "type": "number",
+      "default": 60
+    },
+    "sectionPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "96px",
+          "right": "24px",
+          "bottom": "96px",
+          "left": "24px"
+        },
+        "tablet": {
+          "top": "72px",
+          "right": "20px",
+          "bottom": "72px",
+          "left": "20px"
+        },
+        "mobile": {
+          "top": "56px",
+          "right": "16px",
+          "bottom": "56px",
+          "left": "16px"
+        }
+      }
+    },
+    "sectionMargin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "tablet": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "mobile": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        }
+      }
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "#0b1020"
+      }
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#7c3aed"
+    },
+    "headingTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 44,
+          "tablet": 36,
+          "mobile": 30
+        },
+        "fontWeight": 800,
+        "lineHeight": "1.15"
+      }
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "subheadingTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 18,
+          "tablet": 17,
+          "mobile": 16
+        },
+        "lineHeight": "1.6"
+      }
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": "rgba(255,255,255,0.7)"
+    },
+    "badgeColors": {
+      "type": "object",
+      "default": {
+        "color": "#c4b5fd",
+        "bg": "rgba(124,58,237,0.18)"
+      }
+    },
+    "cardBackground": {
+      "type": "object",
+      "default": {
+        "type": "gradient",
+        "gradient": "linear-gradient(135deg,#7c3aed 0%,#0f172a 100%)"
+      }
+    },
+    "cardOverlay": {
+      "type": "object",
+      "default": {
+        "type": "gradient",
+        "gradient": "linear-gradient(180deg,rgba(11,16,32,0) 30%,rgba(11,16,32,0.88) 100%)"
+      }
+    },
+    "imageOverlay": {
+      "type": "string",
+      "default": "rgba(11,16,32,0.45)"
+    },
+    "cardRadius": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "20px",
+          "right": "20px",
+          "bottom": "20px",
+          "left": "20px"
+        },
+        "tablet": {
+          "top": "20px",
+          "right": "20px",
+          "bottom": "20px",
+          "left": "20px"
+        },
+        "mobile": {
+          "top": "20px",
+          "right": "20px",
+          "bottom": "20px",
+          "left": "20px"
+        }
+      }
+    },
+    "cardPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "32px",
+          "right": "32px",
+          "bottom": "32px",
+          "left": "32px"
+        },
+        "tablet": {
+          "top": "28px",
+          "right": "28px",
+          "bottom": "28px",
+          "left": "28px"
+        },
+        "mobile": {
+          "top": "24px",
+          "right": "24px",
+          "bottom": "24px",
+          "left": "24px"
+        }
+      }
+    },
+    "cardShadow": {
+      "type": "array",
+      "default": [
+        {
+          "hOffset": "0px",
+          "vOffset": "24px",
+          "blur": "48px",
+          "spreed": "-16px",
+          "color": "rgba(0,0,0,0.55)",
+          "isInset": false
+        }
+      ]
+    },
+    "cardBorderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "cardBorderColor": {
+      "type": "string",
+      "default": "rgba(255,255,255,0.12)"
+    },
+    "eyebrowTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 12,
+          "tablet": 12,
+          "mobile": 11
+        },
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "letterSpace": "0.08em"
+      }
+    },
+    "eyebrowColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bg": "rgba(124,58,237,0.9)"
+      }
+    },
+    "cardTitleTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 26,
+          "tablet": 24,
+          "mobile": 22
+        },
+        "fontWeight": 800,
+        "lineHeight": "1.2"
+      }
+    },
+    "cardTitleColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "cardTextTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 15,
+          "tablet": 15,
+          "mobile": 15
+        },
+        "lineHeight": "1.6"
+      }
+    },
+    "cardTextColor": {
+      "type": "string",
+      "default": "rgba(255,255,255,0.85)"
+    },
+    "buttonTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 14,
+          "tablet": 14,
+          "mobile": 14
+        },
+        "fontWeight": 700
+      }
+    },
+    "buttonColors": {
+      "type": "object",
+      "default": {
+        "color": "#1e1b4b",
+        "bg": "#ffffff"
+      }
+    },
+    "buttonHoverColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bg": "#7c3aed"
+      }
+    },
+    "buttonRadius": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "10px",
+        "bottom": "10px",
+        "left": "10px"
+      }
+    },
+    "buttonPadding": {
+      "type": "object",
+      "default": {
+        "top": "11px",
+        "right": "22px",
+        "bottom": "11px",
+        "left": "22px"
+      }
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "heading": "Parallax Tilt Cards"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

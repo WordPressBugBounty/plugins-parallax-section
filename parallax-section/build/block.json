@@ -3,8 +3,8 @@
   "name": "psb/parallax",
   "title": "Parallax Section",
   "description": "Parallax scrolling effects in section.",
-  "category": "widgets",
-  "version": "2.0.2",
+  "category": "parallax-sections",
+  "version": "2.1.0",
   "keywords": [
     "parallax scroll",
     "background effect",
@@ -36,7 +36,7 @@
         "overlayColor": "rgba(0, 0, 0, 0.70)",
         "position": "center center",
         "image": {
-          "url": "https://i.imgur.com/n8bbzIE.jpeg"
+          "url": "https://templates.bplugins.com/wp-content/uploads/2026/09/parallax-section-default.jpg"
         },
         "color": "#000",
         "gradient": "linear-gradient(to bottom, #0f172a, #1e293b)",
@@ -102,6 +102,10 @@
             "upper": "#f0fdf4",
             "lower": "#dcfce7"
           }
+        },
+        "zoom": {
+          "startScale": 1,
+          "endScale": 1.3
         }
       }
     },

@@ -10,9 +10,9 @@ class UpgradePage{
 
 	function adminMenu(){
 		add_submenu_page(
-            'info-cards-dashboard',
-			__( 'Info Cards - Upgrade', 'info-cards' ),
-			__( 'Upgrade', 'info-cards' ),
+            'parallax-sections',
+			__( 'Parallax Sections - Upgrade', 'parallax-section' ),
+			__( 'Upgrade', 'parallax-section' ),
 			'manage_options', 
             'upgrade',
 			[$this, 'upgradePage']
@@ -20,7 +20,7 @@ class UpgradePage{
 	}
 
 	function upgradePage(){ ?>
-		<iframe src='https://checkout.freemius.com/plugin/17727/plan/29468/' width='100%' frameborder='0' style='width: calc(100% - 20px); height: calc(100vh - 60px); margin-top: 15px;'></iframe>
+		<iframe src='https://checkout.freemius.com/plugin/19833' width='100%' frameborder='0' style='width: calc(100% - 20px); height: calc(100vh - 60px); margin-top: 15px;'></iframe>
 	<?php }
 }
 new UpgradePage;

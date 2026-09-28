@@ -1,0 +1,547 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "psb/parallax-skills",
+  "title": "Parallax Skills Cloud (Pro)",
+  "description": "Floating skill bubbles that drift on a spring field and scatter from your cursor, in five layouts.",
+  "category": "parallax-sections",
+  "version": "2.1.0",
+  "keywords": [
+    "skills",
+    "tag cloud",
+    "tags",
+    "bubbles",
+    "tech stack",
+    "orbit",
+    "parallax"
+  ],
+  "textdomain": "parallax-section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "styleSl": {
+      "type": "string",
+      "default": "styleDefault",
+      "enum": [
+        "styleDefault",
+        "styleOne",
+        "styleTwo",
+        "styleThree",
+        "styleFour"
+      ]
+    },
+    "showHeader": {
+      "type": "boolean",
+      "default": true
+    },
+    "badge": {
+      "type": "string",
+      "default": "Our toolkit"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Skills that move with you"
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Stir the cloud — every skill drifts on its own spring and scatters away from your cursor."
+    },
+    "headingTag": {
+      "type": "string",
+      "default": "h2"
+    },
+    "headerAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "skills": {
+      "type": "array",
+      "default": [
+        {
+          "label": "React",
+          "level": 5,
+          "percent": 94,
+          "group": "Frontend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "TypeScript",
+          "level": 4,
+          "percent": 88,
+          "group": "Frontend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "CSS",
+          "level": 4,
+          "percent": 90,
+          "group": "Frontend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Motion",
+          "level": 2,
+          "percent": 70,
+          "group": "Frontend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Node.js",
+          "level": 4,
+          "percent": 84,
+          "group": "Backend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "GraphQL",
+          "level": 3,
+          "percent": 76,
+          "group": "Backend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "WordPress",
+          "level": 5,
+          "percent": 96,
+          "group": "Backend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Docker",
+          "level": 2,
+          "percent": 62,
+          "group": "Backend",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Figma",
+          "level": 4,
+          "percent": 86,
+          "group": "Design",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Branding",
+          "level": 3,
+          "percent": 72,
+          "group": "Design",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Accessibility",
+          "level": 3,
+          "percent": 80,
+          "group": "Design",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "SEO",
+          "level": 3,
+          "percent": 78,
+          "group": "Growth",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Analytics",
+          "level": 2,
+          "percent": 66,
+          "group": "Growth",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        },
+        {
+          "label": "Copywriting",
+          "level": 1,
+          "percent": 58,
+          "group": "Growth",
+          "icon": "",
+          "image": "",
+          "color": "",
+          "url": "",
+          "newTab": false
+        }
+      ]
+    },
+    "showIcons": {
+      "type": "boolean",
+      "default": true
+    },
+    "levelDisplay": {
+      "type": "string",
+      "default": "none"
+    },
+    "levelScale": {
+      "type": "number",
+      "default": 0.18
+    },
+    "centerLabel": {
+      "type": "string",
+      "default": "Core stack"
+    },
+    "showGroupLabels": {
+      "type": "boolean",
+      "default": true
+    },
+    "maxWidth": {
+      "type": "object",
+      "default": {
+        "desktop": "1200px",
+        "tablet": "100%",
+        "mobile": "100%"
+      }
+    },
+    "cloudHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "520px",
+        "tablet": "460px",
+        "mobile": "420px"
+      }
+    },
+    "gap": {
+      "type": "object",
+      "default": {
+        "desktop": "12px",
+        "tablet": "12px",
+        "mobile": "10px"
+      }
+    },
+    "headerWidth": {
+      "type": "string",
+      "default": "38%"
+    },
+    "layoutSeed": {
+      "type": "number",
+      "default": 7
+    },
+    "orbitRings": {
+      "type": "number",
+      "default": 3
+    },
+    "showLines": {
+      "type": "boolean",
+      "default": false
+    },
+    "lineLinks": {
+      "type": "number",
+      "default": 2
+    },
+    "mobileList": {
+      "type": "boolean",
+      "default": true
+    },
+    "drift": {
+      "type": "number",
+      "default": 0.6
+    },
+    "driftSpeed": {
+      "type": "number",
+      "default": 0.6
+    },
+    "pointerMode": {
+      "type": "string",
+      "default": "repel",
+      "enum": [
+        "repel",
+        "attract",
+        "none"
+      ]
+    },
+    "repelStrength": {
+      "type": "number",
+      "default": 1
+    },
+    "repelRadius": {
+      "type": "number",
+      "default": 160
+    },
+    "spring": {
+      "type": "number",
+      "default": 0.07
+    },
+    "damping": {
+      "type": "number",
+      "default": 0.84
+    },
+    "orbitSpeed": {
+      "type": "number",
+      "default": 6
+    },
+    "hoverScale": {
+      "type": "number",
+      "default": 1.08
+    },
+    "scrollParallax": {
+      "type": "boolean",
+      "default": true
+    },
+    "parallaxIntensity": {
+      "type": "number",
+      "default": 60
+    },
+    "entrance": {
+      "type": "boolean",
+      "default": true
+    },
+    "entranceStagger": {
+      "type": "number",
+      "default": 0.04
+    },
+    "sectionPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "96px",
+          "right": "24px",
+          "bottom": "96px",
+          "left": "24px"
+        },
+        "tablet": {
+          "top": "72px",
+          "right": "20px",
+          "bottom": "72px",
+          "left": "20px"
+        },
+        "mobile": {
+          "top": "56px",
+          "right": "16px",
+          "bottom": "56px",
+          "left": "16px"
+        }
+      }
+    },
+    "sectionMargin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "tablet": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "mobile": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        }
+      }
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "type": "gradient",
+        "gradient": "radial-gradient(ellipse at 50% 45%,#1b1f4b 0%,#070b18 70%)"
+      }
+    },
+    "imageOverlay": {
+      "type": "string",
+      "default": "rgba(7,11,24,0.62)"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#8b5cf6"
+    },
+    "headingTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 44,
+          "tablet": 36,
+          "mobile": 30
+        },
+        "fontWeight": 800,
+        "lineHeight": "1.15"
+      }
+    },
+    "headingColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "subheadingTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 18,
+          "tablet": 17,
+          "mobile": 16
+        },
+        "lineHeight": "1.6"
+      }
+    },
+    "subheadingColor": {
+      "type": "string",
+      "default": "rgba(226,232,240,0.72)"
+    },
+    "badgeColors": {
+      "type": "object",
+      "default": {
+        "color": "#c4b5fd",
+        "bg": "rgba(139,92,246,0.16)"
+      }
+    },
+    "bubbleTypography": {
+      "type": "object",
+      "default": {
+        "fontSize": {
+          "desktop": 16,
+          "tablet": 15,
+          "mobile": 14
+        },
+        "fontWeight": 600
+      }
+    },
+    "bubbleColors": {
+      "type": "object",
+      "default": {
+        "color": "#f1f5f9",
+        "bg": "rgba(255,255,255,0.06)"
+      }
+    },
+    "bubbleHoverColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bg": "#8b5cf6"
+      }
+    },
+    "bubbleBorderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "bubbleBorderColor": {
+      "type": "string",
+      "default": "rgba(167,139,250,0.35)"
+    },
+    "bubbleRadius": {
+      "type": "object",
+      "default": {
+        "top": "999px",
+        "right": "999px",
+        "bottom": "999px",
+        "left": "999px"
+      }
+    },
+    "bubblePadding": {
+      "type": "object",
+      "default": {
+        "top": "10px",
+        "right": "18px",
+        "bottom": "10px",
+        "left": "18px"
+      }
+    },
+    "bubbleShadow": {
+      "type": "array",
+      "default": [
+        {
+          "hOffset": "0px",
+          "vOffset": "0px",
+          "blur": "24px",
+          "spreed": "-6px",
+          "color": "rgba(139,92,246,0.45)",
+          "isInset": false
+        }
+      ]
+    },
+    "levelColor": {
+      "type": "string",
+      "default": "#c4b5fd"
+    },
+    "lineColor": {
+      "type": "string",
+      "default": "rgba(167,139,250,0.28)"
+    },
+    "ringColor": {
+      "type": "string",
+      "default": "rgba(167,139,250,0.22)"
+    },
+    "centerColors": {
+      "type": "object",
+      "default": {
+        "color": "#ffffff",
+        "bg": "#8b5cf6"
+      }
+    },
+    "groupLabelColor": {
+      "type": "string",
+      "default": "#a5b4fc"
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "heading": "Parallax Skills Cloud"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

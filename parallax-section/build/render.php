@@ -1,4 +1,6 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) { exit; }
+
 $prefix = 'psbParallaxSection';
 $id = wp_unique_id( "$prefix-" );
 

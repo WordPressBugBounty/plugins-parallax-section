@@ -25,12 +25,9 @@ if ( !function_exists( 'ps_fs' ) ) {
                     'is_require_payment' => true,
                 ),
                 'menu'             => array(
-                    'slug'       => 'parallax-section-dashboard',
-                    'first-path' => 'tools.php?page=parallax-section-dashboard#/welcome',
+                    'slug'       => 'edit.php?post_type=parallax-section',
+                    'first-path' => 'edit.php?post_type=parallax-section&page=parallax-section-dashboard#/welcome',
                     'support'    => false,
-                    'parent'     => array(
-                        'slug' => 'tools.php',
-                    ),
                 ),
                 'is_live'          => true,
             ) );
