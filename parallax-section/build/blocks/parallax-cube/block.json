@@ -5,7 +5,7 @@
   "title": "Parallax Cube (Pro)",
   "description": "A real 3D cube whose faces quarter-turn to swap content panels, lit as it spins, in four styles.",
   "category": "parallax-sections",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "keywords": [
     "cube",
     "3d",

@@ -2,9 +2,9 @@
 Contributors: bplugins, abuhayat, charlescormier, sojibislam9878
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
-Requires at least: 6.5+
+Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 2.1.0
+Stable tag: 2.1.1
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -32,7 +32,7 @@ You can easily create a parallax section with this plugin.
 
 
 = How to use =
-- First, install the Parallax Section plugin.
+- First, install the Parallax Section plugin
 - Add the Parallax Section block from the block category called "Widgets" in the Gutenberg editor.
 - You can change block settings from the right-side settings sidebar.
 - Enjoy!
@@ -117,6 +117,9 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 == Changelog ==
 
+= 2.1.1 - 1 October 2026 =
+* Updated: live demo links for every section, and a watch-video link for each Pro section
+
 = 2.1.0 - 28 September 2026 =
 * New Pro sections: Parallax Tilt Card, Testimonials, CTA, Cube and Skills Cloud — each with multiple style presets and tabbed General / Style settings
 * New: "Mouse scroll" pin mode for Testimonials and Cube — the section sticks while scrolling moves through the cards or turns the cube face by face
@@ -182,6 +185,9 @@ Please report security bugs found in the source code of the Parallax Section blo
 * Initial Release.
 
 == Upgrade Notice ==
+
+= 2.1.1 =
+Updated demo and video links for every section.
 
 = 2.1.0 =
 Five new Pro parallax sections (Tilt Card, Testimonials, CTA, Cube, Skills Cloud), new scroll effects, and parallax that now plays inside the block editor.

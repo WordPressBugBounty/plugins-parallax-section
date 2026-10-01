@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Parallax Section Block – Add Parallax Scrolling Effects to Sections
  * Description: Makes background element scrolls slower than foreground content.
- * Version: 2.1.0
+ * Version: 2.1.1
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -27,7 +27,7 @@ if ( function_exists( 'ps_fs' ) ) {
 	ps_fs()->set_basename( false, __FILE__ );
 	
 } else {
-define( 'PSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.1.0' );
+define( 'PSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.1.1' );
 define( 'PSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'PSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PARALLAX_HAS_PRO', file_exists( dirname(__FILE__) . '/vendor/freemius/start.php' ) );
