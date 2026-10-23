@@ -1,5 +1,5 @@
 === Parallax Section Block – Add Parallax Scrolling Effects to Sections ===
-Contributors: bplugins, abuhayat, charlescormier, sojibislam9878
+Contributors: bplugins, abuhayat, sojibislam9878
 Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.5
@@ -118,7 +118,7 @@ Please report security bugs found in the source code of the Parallax Section blo
 == Changelog ==
 
 = 2.1.1 - 1 October 2026 =
-* Updated: live demo links for every section, and a watch-video link for each Pro section
+* Updated: live demo links for every section and a watch-video link for each Pro section
 
 = 2.1.0 - 28 September 2026 =
 * New Pro sections: Parallax Tilt Card, Testimonials, CTA, Cube and Skills Cloud — each with multiple style presets and tabbed General / Style settings
