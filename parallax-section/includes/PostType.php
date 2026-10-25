@@ -49,18 +49,17 @@ if ( ! class_exists( 'PSB_PostType' ) ) {
 		}
 
 		/**
-		 * Keep this CPT to exactly one section block.
-		 *
-		 * Free: 'all' — the single Parallax Section can't be removed, moved or
-		 * surrounded by other blocks.
-		 * Pro: 'insert' — still no extra blocks, but the "Section Block" picker
-		 * (src/admin/promo/SectionPicker.js) may swap the one block for any Pro
-		 * section. 'all' would make WordPress flag a swapped block as "doesn't
-		 * match the template"; 'insert' skips that check.
+		 * Keep this CPT to exactly one section block: 'insert' — no blocks can be
+		 * added or removed at the root, but the "Section Block" picker
+		 * (src/admin/promo/SectionPicker.js) may swap the one block for another
+		 * section (free: Parallax Section / Parallax Layers; Pro: every section).
+		 * 'all' would make WordPress flag a swapped block as "doesn't match the
+		 * template"; 'insert' skips that check. Container sections set their own
+		 * InnerBlocks lock, so their content stays editable.
 		 */
 		public function lockTemplate( $settings, $context ) {
 			if ( ! empty( $context->post ) && self::POST_TYPE === $context->post->post_type ) {
-				$settings['templateLock'] = ( function_exists( 'psIsPremium' ) && psIsPremium() ) ? 'insert' : 'all';
+				$settings['templateLock'] = 'insert';
 			}
 			return $settings;
 		}

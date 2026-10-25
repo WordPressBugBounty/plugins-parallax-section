@@ -1,0 +1,293 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 533" width="800" height="533" role="img" aria-labelledby="t d">
+	<title id="t">Two ways to add a parallax section</title>
+	<desc id="d">Left: insert the Parallax Section block from the block editor. Right: copy a section's shortcode and paste it into any page, widget or page builder.</desc>
+	<defs>
+		<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#f4f8ff"/>
+			<stop offset="1" stop-color="#f6f3ff"/>
+		</linearGradient>
+		<linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#1e3a8a"/>
+			<stop offset="1" stop-color="#0B81EE"/>
+		</linearGradient>
+		<linearGradient id="sky2" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#3b1d8f"/>
+			<stop offset="1" stop-color="#8C74FD"/>
+		</linearGradient>
+		<filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+			<feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#1b2e4b" flood-opacity=".10"/>
+		</filter>
+		<filter id="sh2" x="-10%" y="-10%" width="120%" height="140%">
+			<feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#1b2e4b" flood-opacity=".18"/>
+		</filter>
+		<clipPath id="clipA1"><rect x="40" y="118" width="330" height="118" rx="10"/></clipPath>
+		<clipPath id="clipA2"><rect x="444" y="202" width="308" height="80" rx="10"/></clipPath>
+		<path id="cursor" d="M0 0V17l4.6-4.1 3.1 6.7 2.8-1.2-3.1-6.6H13.6Z" fill="#0f172a" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/>
+	</defs>
+
+	<style>
+		text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+		.mono { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; }
+		.anim { animation-duration: 12s; animation-iteration-count: infinite; animation-timing-function: ease-in-out; }
+		.ripple { transform-box: fill-box; transform-origin: center; animation-timing-function: ease-out; }
+
+		/* Parallax layers inside the finished sections: each layer drifts at its own speed */
+		.far { animation: far 4s ease-in-out infinite alternate; }
+		@keyframes far { from { transform: translateY(-3px); } to { transform: translateY(3px); } }
+		.mid { animation: mid 4s ease-in-out infinite alternate; }
+		@keyframes mid { from { transform: translateY(-7px); } to { transform: translateY(7px); } }
+		.near { animation: near 4s ease-in-out infinite alternate; }
+		@keyframes near { from { transform: translateY(-12px); } to { transform: translateY(12px); } }
+		.copyText { animation: copyText 4s ease-in-out infinite alternate; }
+		@keyframes copyText { from { transform: translateY(4px); } to { transform: translateY(-4px); } }
+
+		/* ---- Gutenberg (first half) ---- */
+		.c1 { animation-name: c1; }
+		@keyframes c1 {
+			0%, 2% { transform: translate(300px, 296px); opacity: 1; }
+			9%, 13% { transform: translate(358px, 126px); opacity: 1; }
+			23%, 29% { transform: translate(224px, 226px); opacity: 1; }
+			34%, 100% { transform: translate(224px, 226px); opacity: 0; }
+		}
+		.r1a { animation-name: r1a; }
+		@keyframes r1a { 0%, 9% { opacity: 0; transform: scale(.3); } 9.5% { opacity: .6; transform: scale(.3); } 13%, 100% { opacity: 0; transform: scale(1.8); } }
+		.r1b { animation-name: r1b; }
+		@keyframes r1b { 0%, 26% { opacity: 0; transform: scale(.3); } 26.5% { opacity: .6; transform: scale(.3); } 30%, 100% { opacity: 0; transform: scale(1.8); } }
+		.pop { animation-name: pop; }
+		@keyframes pop { 0%, 9.5% { opacity: 0; transform: translateY(6px); } 11.5%, 27.5% { opacity: 1; transform: translateY(0); } 29.5%, 100% { opacity: 0; transform: translateY(0); } }
+		.typed { animation-name: typed; transform-box: fill-box; transform-origin: right center; }
+		@keyframes typed { 0%, 12% { transform: scaleX(1); } 18%, 100% { transform: scaleX(0); } }
+		.hl { animation-name: hl; }
+		@keyframes hl { 0%, 19% { opacity: 0; } 22%, 28% { opacity: 1; } 30%, 100% { opacity: 0; } }
+		.ph { animation-name: ph; }
+		@keyframes ph { 0%, 28% { opacity: 1; } 30%, 96% { opacity: 0; } 100% { opacity: 1; } }
+		.a1 { animation-name: a1; }
+		@keyframes a1 { 0%, 29% { opacity: 0; transform: translateY(10px); } 33%, 94% { opacity: 1; transform: translateY(0); } 98%, 100% { opacity: 0; transform: translateY(0); } }
+
+		/* ---- Shortcode (second half) ---- */
+		.c2 { animation-name: c2; }
+		@keyframes c2 {
+			0%, 48% { transform: translate(740px, 296px); opacity: 0; }
+			50% { transform: translate(740px, 296px); opacity: 1; }
+			56%, 59% { transform: translate(728px, 130px); opacity: 1; }
+			67%, 71% { transform: translate(560px, 240px); opacity: 1; }
+			76%, 100% { transform: translate(560px, 240px); opacity: 0; }
+		}
+		.r2a { animation-name: r2a; }
+		@keyframes r2a { 0%, 56.5% { opacity: 0; transform: scale(.3); } 57% { opacity: .6; transform: scale(.3); } 61%, 100% { opacity: 0; transform: scale(1.8); } }
+		.r2b { animation-name: r2b; }
+		@keyframes r2b { 0%, 68% { opacity: 0; transform: scale(.3); } 68.5% { opacity: .6; transform: scale(.3); } 72%, 100% { opacity: 0; transform: scale(1.8); } }
+		.copy { animation-name: copy; }
+		@keyframes copy { 0%, 57% { opacity: 1; } 58%, 95% { opacity: 0; } 98%, 100% { opacity: 1; } }
+		.copied { animation-name: copied; }
+		@keyframes copied { 0%, 57% { opacity: 0; } 58%, 95% { opacity: 1; } 98%, 100% { opacity: 0; } }
+		.ghost { animation-name: ghost; }
+		@keyframes ghost {
+			0%, 58% { opacity: 0; transform: translate(0, 0); }
+			60% { opacity: .9; transform: translate(0, 0); }
+			67% { opacity: .9; transform: translate(-88px, 104px); }
+			69%, 100% { opacity: 0; transform: translate(-88px, 104px); }
+		}
+		.boxph { animation-name: boxph; }
+		@keyframes boxph { 0%, 68% { opacity: 1; } 70%, 96% { opacity: 0; } 100% { opacity: 1; } }
+		.paste { animation-name: paste; }
+		@keyframes paste { 0%, 69% { opacity: 0; } 71%, 75% { opacity: 1; } 77%, 100% { opacity: 0; } }
+		.a2 { animation-name: a2; }
+		@keyframes a2 { 0%, 76% { opacity: 0; transform: translateY(10px); } 80%, 94% { opacity: 1; transform: translateY(0); } 98%, 100% { opacity: 0; transform: translateY(0); } }
+
+		/* Step highlight on the panel labels */
+		.s1 { animation-name: s1; }
+		@keyframes s1 { 0%, 46% { opacity: 1; } 50%, 96% { opacity: .45; } 100% { opacity: 1; } }
+		.s2 { animation-name: s2; }
+		@keyframes s2 { 0%, 46% { opacity: .45; } 50%, 96% { opacity: 1; } 100% { opacity: .45; } }
+
+		@media (prefers-reduced-motion: reduce) {
+			.anim, .far, .mid, .near, .copyText { animation: none !important; }
+			.c1, .c2, .r1a, .r1b, .r2a, .r2b, .pop, .ph, .boxph, .paste, .ghost, .copied, .hl { opacity: 0; }
+			.a1, .a2, .copy, .s1, .s2 { opacity: 1; }
+		}
+	</style>
+
+	<rect width="800" height="533" fill="url(#bg)"/>
+
+	<!-- ================= Headline ================= -->
+	<text x="400" y="42" text-anchor="middle" font-size="24" font-weight="800" fill="#070127">Add parallax sections your way</text>
+	<text x="400" y="67" text-anchor="middle" font-size="13.5" fill="#64748b">Insert the block in Gutenberg — or paste a shortcode anywhere on your site.</text>
+
+	<g transform="translate(0 84)">
+
+	<!-- ================= Labels ================= -->
+	<g class="anim s1">
+		<circle cx="34" cy="25" r="11" fill="#0B81EE"/>
+		<text x="34" y="29.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">1</text>
+		<text x="52" y="30" font-size="14" font-weight="700" fill="#070127">Gutenberg block</text>
+		<text x="170" y="30" font-size="12" fill="#64748b">Insert it in the editor</text>
+	</g>
+	<g class="anim s2">
+		<circle cx="430" cy="25" r="11" fill="#8C74FD"/>
+		<text x="430" y="29.5" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">2</text>
+		<text x="448" y="30" font-size="14" font-weight="700" fill="#070127">Shortcode</text>
+		<text x="525" y="30" font-size="12" fill="#64748b">Paste it anywhere</text>
+	</g>
+
+	<!-- ================= Left panel: block editor ================= -->
+	<g filter="url(#sh)">
+		<rect x="20" y="46" width="364" height="292" rx="14" fill="#fff"/>
+	</g>
+	<path d="M20 70h364" stroke="#eef2f7"/>
+	<circle cx="36" cy="58" r="4" fill="#fca5a5"/><circle cx="49" cy="58" r="4" fill="#fcd34d"/><circle cx="62" cy="58" r="4" fill="#86efac"/>
+	<text x="202" y="62" text-anchor="middle" font-size="10" fill="#94a3b8">Block editor</text>
+
+	<text x="40" y="100" font-size="17" font-weight="700" fill="#0f172a">My landing page</text>
+
+	<g class="anim ph">
+		<text x="40" y="146" font-size="12.5" fill="#94a3b8">Type / to choose a block</text>
+		<rect x="350" y="133" width="18" height="18" rx="4" fill="#1e1e1e"/>
+		<path d="M359 137.5v9M354.5 142h9" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+	</g>
+
+	<!-- page content -->
+	<rect x="40" y="252" width="300" height="7" rx="3.5" fill="#eef2f7"/>
+	<rect x="40" y="268" width="250" height="7" rx="3.5" fill="#eef2f7"/>
+	<rect x="40" y="284" width="280" height="7" rx="3.5" fill="#eef2f7"/>
+	<rect x="40" y="300" width="190" height="7" rx="3.5" fill="#eef2f7"/>
+
+	<!-- result: parallax section -->
+	<g class="anim a1">
+		<g clip-path="url(#clipA1)">
+			<rect x="40" y="100" width="330" height="150" fill="url(#sky1)"/>
+			<g class="far">
+				<circle cx="318" cy="142" r="11" fill="#fde68a" opacity=".9"/>
+				<path d="M40 214l52-40 40 26 58-48 60 44 44-28 76 46v40H40z" fill="#93c5fd" opacity=".55"/>
+			</g>
+			<g class="mid"><path d="M40 228l70-34 54 22 66-36 62 34 78-20v60H40z" fill="#3b82f6" opacity=".75"/></g>
+			<g class="near"><path d="M40 246l84-26 70 16 78-22 98 20v26H40z" fill="#1e3a8a"/></g>
+			<g class="copyText">
+				<text x="205" y="158" text-anchor="middle" font-size="15" font-weight="800" fill="#fff">Explore the mountains</text>
+				<text x="205" y="176" text-anchor="middle" font-size="10.5" fill="#dbeafe">Added with the block editor</text>
+			</g>
+		</g>
+		<rect x="40" y="118" width="330" height="118" rx="10" fill="none" stroke="#bfdbfe"/>
+	</g>
+
+	<!-- block inserter -->
+	<g class="anim pop">
+		<g filter="url(#sh2)"><rect x="166" y="156" width="208" height="122" rx="9" fill="#fff" stroke="#e2e8f0"/></g>
+		<rect x="176" y="166" width="188" height="24" rx="5" fill="#f1f5f9"/>
+		<text x="186" y="182" font-size="12" fill="#0f172a">parallax</text>
+		<rect class="anim typed" x="185" y="170" width="52" height="16" fill="#f1f5f9"/>
+		<circle cx="348" cy="177" r="4.5" fill="none" stroke="#64748b" stroke-width="1.5"/><path d="M351.5 180.5l3 3" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/>
+		<text x="176" y="206" font-size="8.5" font-weight="700" letter-spacing=".08em" fill="#94a3b8">PARALLAX SECTION BLOCKS</text>
+
+		<rect x="176" y="212" width="88" height="56" rx="7" fill="#fff" stroke="#e2e8f0"/>
+		<rect class="anim hl" x="176" y="212" width="88" height="56" rx="7" fill="#eff6ff" stroke="#0B81EE" stroke-width="1.5"/>
+		<rect x="207" y="221" width="26" height="20" rx="3" fill="none" stroke="#0B81EE" stroke-width="1.8"/>
+		<path d="M209 238l7-7 5 4 4-3 6 6" fill="none" stroke="#0B81EE" stroke-width="1.6" stroke-linejoin="round"/>
+		<text x="220" y="257" text-anchor="middle" font-size="9.5" fill="#0f172a">Parallax Section</text>
+
+		<rect x="274" y="212" width="88" height="56" rx="7" fill="#fff" stroke="#e2e8f0"/>
+		<rect x="306" y="220" width="24" height="7" rx="2" fill="#c4b5fd"/>
+		<rect x="303" y="227" width="30" height="7" rx="2" fill="#a78bfa"/>
+		<rect x="300" y="234" width="36" height="7" rx="2" fill="#8C74FD"/>
+		<text x="318" y="257" text-anchor="middle" font-size="9.5" fill="#0f172a">Parallax Layers</text>
+	</g>
+
+	<circle class="anim ripple r1a" cx="359" cy="142" r="11" fill="none" stroke="#0B81EE" stroke-width="2"/>
+	<circle class="anim ripple r1b" cx="220" cy="240" r="13" fill="none" stroke="#0B81EE" stroke-width="2"/>
+	<use class="anim c1" href="#cursor"/>
+
+	<!-- ================= OR ================= -->
+	<circle cx="400" cy="192" r="17" fill="#fff" stroke="#e2e8f0" filter="url(#sh)"/>
+	<text x="400" y="196.5" text-anchor="middle" font-size="11" font-weight="800" fill="#64748b">OR</text>
+
+	<!-- ================= Right panel: shortcode ================= -->
+	<g filter="url(#sh)">
+		<rect x="416" y="46" width="364" height="292" rx="14" fill="#fff"/>
+	</g>
+	<path d="M416 70h364" stroke="#eef2f7"/>
+	<circle cx="432" cy="58" r="4" fill="#fca5a5"/><circle cx="445" cy="58" r="4" fill="#fcd34d"/><circle cx="458" cy="58" r="4" fill="#86efac"/>
+	<text x="598" y="62" text-anchor="middle" font-size="10" fill="#94a3b8">Parallax Section → All Parallax Sections</text>
+
+	<text x="436" y="96" font-size="9" font-weight="700" letter-spacing=".08em" fill="#94a3b8">TITLE</text>
+	<text x="534" y="96" font-size="9" font-weight="700" letter-spacing=".08em" fill="#94a3b8">SHORTCODE</text>
+	<rect x="432" y="104" width="332" height="40" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+	<text x="444" y="128" font-size="12" font-weight="700" fill="#0f172a">Hero banner</text>
+	<rect x="530" y="114" width="176" height="20" rx="4" fill="#fff" stroke="#cbd5e1"/>
+	<text class="mono" x="537" y="128" font-size="10" fill="#334155">[parallax_section id="123"]</text>
+	<g class="anim copy">
+		<rect x="712" y="114" width="44" height="20" rx="4" fill="#0B81EE"/>
+		<text x="734" y="128" text-anchor="middle" font-size="10.5" font-weight="700" fill="#fff">Copy</text>
+	</g>
+	<g class="anim copied">
+		<rect x="712" y="114" width="44" height="20" rx="4" fill="#16a34a"/>
+		<path d="M720 124.5l3 3 5.5-6" stroke="#fff" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+		<text x="742" y="128" text-anchor="middle" font-size="9.5" font-weight="700" fill="#fff">Done</text>
+	</g>
+
+	<path d="M598 150v18" stroke="#8C74FD" stroke-width="1.8" stroke-dasharray="3 3"/>
+	<path d="M593 164l5 6 5-6" fill="none" stroke="#8C74FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+	<text x="610" y="164" font-size="10.5" fill="#7c3aed" font-weight="600">paste anywhere</text>
+
+	<rect x="432" y="176" width="332" height="118" rx="10" fill="#fff" stroke="#cbd5e1" stroke-dasharray="4 4"/>
+	<text x="444" y="194" font-size="9" font-weight="700" letter-spacing=".08em" fill="#94a3b8">ANY PAGE, POST, WIDGET OR BUILDER</text>
+
+	<g class="anim boxph">
+		<text x="444" y="238" font-size="12.5" fill="#94a3b8">Paste the shortcode here…</text>
+		<rect x="444" y="252" width="230" height="7" rx="3.5" fill="#eef2f7"/>
+		<rect x="444" y="268" width="180" height="7" rx="3.5" fill="#eef2f7"/>
+	</g>
+	<g class="anim paste">
+		<rect x="442" y="223" width="190" height="22" rx="5" fill="#f5f3ff"/>
+		<text class="mono" x="450" y="238" font-size="11" fill="#6d28d9">[parallax_section id="123"]</text>
+	</g>
+
+	<!-- result: section rendered from the shortcode -->
+	<g class="anim a2">
+		<g clip-path="url(#clipA2)">
+			<rect x="444" y="190" width="308" height="104" fill="url(#sky2)"/>
+			<g class="far">
+				<circle cx="712" cy="222" r="9" fill="#fde68a" opacity=".9"/>
+				<path d="M444 262l50-30 44 20 56-36 54 30 46-20 58 30v40H444z" fill="#c4b5fd" opacity=".55"/>
+			</g>
+			<g class="mid"><path d="M444 274l66-24 52 16 62-26 58 24 70-14v50H444z" fill="#8C74FD" opacity=".8"/></g>
+			<g class="near"><path d="M444 290l80-18 66 12 74-16 88 14v30H444z" fill="#3b1d8f"/></g>
+			<g class="copyText">
+				<text x="598" y="238" text-anchor="middle" font-size="13.5" font-weight="800" fill="#fff">Summer sale — 30% off</text>
+				<text x="598" y="255" text-anchor="middle" font-size="10.5" fill="#ede9fe">Rendered from the shortcode</text>
+			</g>
+		</g>
+		<rect x="444" y="202" width="308" height="80" rx="10" fill="none" stroke="#ddd6fe"/>
+	</g>
+
+	<!-- dragged shortcode chip -->
+	<g class="anim ghost">
+		<rect x="530" y="114" width="176" height="20" rx="4" fill="#fff" stroke="#8C74FD" filter="url(#sh2)"/>
+		<text class="mono" x="537" y="128" font-size="10" fill="#6d28d9">[parallax_section id="123"]</text>
+	</g>
+
+	<!-- where it works -->
+	<g font-size="9.5" fill="#475569">
+		<rect x="432" y="306" width="46" height="20" rx="10" fill="#f1f5f9"/><text x="455" y="319.5" text-anchor="middle">Pages</text>
+		<rect x="484" y="306" width="44" height="20" rx="10" fill="#f1f5f9"/><text x="506" y="319.5" text-anchor="middle">Posts</text>
+		<rect x="534" y="306" width="58" height="20" rx="10" fill="#f1f5f9"/><text x="563" y="319.5" text-anchor="middle">Widgets</text>
+		<rect x="598" y="306" width="84" height="20" rx="10" fill="#f1f5f9"/><text x="640" y="319.5" text-anchor="middle">Page builders</text>
+		<rect x="688" y="306" width="76" height="20" rx="10" fill="#f1f5f9"/><text x="726" y="319.5" text-anchor="middle">Classic editor</text>
+	</g>
+
+	<circle class="anim ripple r2a" cx="734" cy="124" r="11" fill="none" stroke="#8C74FD" stroke-width="2"/>
+	<circle class="anim ripple r2b" cx="566" cy="252" r="13" fill="none" stroke="#8C74FD" stroke-width="2"/>
+	<use class="anim c2" href="#cursor"/>
+	</g>
+
+	<!-- ================= Footer ================= -->
+	<g filter="url(#sh)">
+		<rect x="20" y="452" width="760" height="58" rx="14" fill="#fff"/>
+	</g>
+	<text x="44" y="486" font-size="12" fill="#64748b"><tspan font-weight="700" fill="#070127">Same section, same effect</tspan> — build it once, reuse it on any page.</text>
+	<g font-size="10.5" font-weight="700">
+		<rect x="560" y="469" width="96" height="24" rx="12" fill="#e8f2fe"/>
+		<text x="608" y="485" text-anchor="middle" fill="#0B81EE">2 Free blocks</text>
+		<rect x="664" y="469" width="96" height="24" rx="12" fill="#efebff"/>
+		<text x="712" y="485" text-anchor="middle" fill="#6d28d9">+5 Pro blocks</text>
+	</g>
+</svg>

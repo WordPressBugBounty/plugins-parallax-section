@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 2.1.1
+Stable tag: 2.2.0
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,6 +21,8 @@ You can easily create a parallax section with this plugin.
 * Easy to use
 * It does not require much technical knowledge to use
 * It is lightweight because it relies on JavaScript
+* Smooth motion — every effect glides toward the scroll position instead of jumping (on by default).
+* Parallax Layers (Free) — put any blocks inside and each one moves at its own depth as you scroll, with per-layer speed, direction and fade.
 * Parallax Tilt Card (Pro) — cards that tilt toward the pointer and drift on scroll, with image parallax and a glare sheen, in four styles.
 * Parallax Testimonials (Pro) — a 3D coverflow, stacked, spotlight or minimal testimonial carousel with autoplay and swipe.
 * Parallax CTA (Pro) — a conversion band with a magnetic button, animated aurora and converging orbs, in four styles.
@@ -117,6 +119,14 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 == Changelog ==
 
+= 2.2.0 - 25 October 2026 =
+* New free block: Parallax Layers — put any blocks inside and each one moves at its own depth as you scroll, with per-layer speed, direction and fade
+* New: "Smooth motion" option for the Parallax Section block — effects glide toward the scroll position instead of jumping (on by default)
+* New: Parallax Layers can be used in shortcodes on every site via the "Section Block" picker
+* Improved: Leaf effect leaves now turn as you scroll, without jitter
+* Improved: animated "how to use" guide on the dashboard
+* Fixed: a JavaScript error for site visitors on pages with the Parallax Section block
+
 = 2.1.1 - 1 October 2026 =
 * Updated: live demo links for every section and a watch-video link for each Pro section
 
@@ -185,6 +195,9 @@ Please report security bugs found in the source code of the Parallax Section blo
 * Initial Release.
 
 == Upgrade Notice ==
+
+= 2.2.0 =
+New free Parallax Layers block, a Smooth motion option for every effect, and a fix for a visitor-side JavaScript error.
 
 = 2.1.1 =
 Updated demo and video links for every section.

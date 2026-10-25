@@ -66,6 +66,7 @@ class Menu {
 				'licenseActiveNonce' => wp_create_nonce('bplLicenseActive'),
 				'nonce' => wp_create_nonce( 'psbCreatePage' ),
 				'adminUrl' => admin_url(),
+				'pluginUrl' => PSB_DIR_URL,
 				'disabledBlocks' => class_exists( 'PSB_DisabledBlocks' ) ? PSB_DisabledBlocks::get() : [],
 				'disabledBlocksNonce' => wp_create_nonce( 'psb_disabled_blocks' ),
 			] ) ); ?>'

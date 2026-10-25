@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Parallax Section Block – Add Parallax Scrolling Effects to Sections
  * Description: Makes background element scrolls slower than foreground content.
- * Version: 2.1.1
+ * Version: 2.2.0
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -27,7 +27,7 @@ if ( function_exists( 'ps_fs' ) ) {
 	ps_fs()->set_basename( false, __FILE__ );
 	
 } else {
-define( 'PSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.1.1' );
+define( 'PSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.2.0' );
 define( 'PSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'PSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PARALLAX_HAS_PRO', file_exists( dirname(__FILE__) . '/vendor/freemius/start.php' ) );
@@ -58,6 +58,7 @@ if( !class_exists( 'PSBPlugin' ) ){
 			add_filter( 'default_content', [$this, 'defaultContent'], 10, 2 );
 			add_filter( 'block_categories_all', [ $this, 'registerBlockCategory' ], 10, 2 );
 			add_action( 'wp_enqueue_scripts', [ $this, 'pricingUrlForAdmins' ] );
+			add_filter( 'register_block_type_args', [ $this, 'addLayerAttribute' ] );
 
 		}
 
@@ -115,6 +116,19 @@ if( !class_exists( 'PSBPlugin' ) ){
 			}
 		}
 
+		// Parallax Layers stores each inner block's layer settings in a
+		// `psbLayer` attribute (see src/blocks/parallax-layers/layerControls.js).
+		// Declare it for every block so server-rendered blocks accept it.
+		function addLayerAttribute( $args ) {
+			if ( ! isset( $args['attributes'] ) || ! is_array( $args['attributes'] ) ) {
+				$args['attributes'] = [];
+			}
+			if ( ! isset( $args['attributes']['psbLayer'] ) ) {
+				$args['attributes']['psbLayer'] = [ 'type' => 'object' ];
+			}
+			return $args;
+		}
+
 		function enqueueBlockEditorAssets() {
 			wp_add_inline_script( 'psb-parallax-editor-script', 'const psbpipecheck = ' . wp_json_encode(psIsPremium()).';', 'before');
 		}
@@ -124,6 +138,14 @@ if( !class_exists( 'PSBPlugin' ) ){
 
 			// Core block — always available (marked "required" in the dashboard).
 			register_block_type( __DIR__ . '/build' );
+
+			// Free effect blocks — available to everyone, can be switched off
+			// from the dashboard Blocks page.
+			foreach ( [ 'parallax-layers' ] as $slug ) {
+				if ( ! in_array( 'psb/' . $slug, $disabled, true ) ) {
+					register_block_type( __DIR__ . '/build/blocks/' . $slug );
+				}
+			}
 
 			// Pro-only blocks: registered (and therefore available in the
 			// inserter) only for licensed users and only when not toggled off

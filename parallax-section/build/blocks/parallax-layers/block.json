@@ -1,0 +1,145 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "psb/parallax-layers",
+  "title": "Parallax Layers",
+  "description": "Put any blocks inside and give each one its own parallax speed for real multi-layer depth on scroll.",
+  "category": "parallax-sections",
+  "version": "2.2.0",
+  "keywords": [
+    "parallax",
+    "layers",
+    "depth",
+    "scroll",
+    "section",
+    "container",
+    "multi-layer"
+  ],
+  "textdomain": "parallax-section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "minHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "80vh",
+        "tablet": "70vh",
+        "mobile": "60vh"
+      }
+    },
+    "contentWidth": {
+      "type": "string",
+      "default": "boxed"
+    },
+    "maxWidth": {
+      "type": "string",
+      "default": "1140px"
+    },
+    "verticalAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "textAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "80px",
+          "right": "24px",
+          "bottom": "80px",
+          "left": "24px"
+        },
+        "tablet": {
+          "top": "64px",
+          "right": "24px",
+          "bottom": "64px",
+          "left": "24px"
+        },
+        "mobile": {
+          "top": "56px",
+          "right": "16px",
+          "bottom": "56px",
+          "left": "16px"
+        }
+      }
+    },
+    "gap": {
+      "type": "string",
+      "default": "20px"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "type": "image",
+        "color": "#0b1020",
+        "gradient": "linear-gradient(135deg, #0f172a, #312e81)",
+        "image": {
+          "url": "https://templates.bplugins.com/wp-content/uploads/2026/09/parallax-section-default.jpg"
+        },
+        "position": "center center",
+        "size": "cover",
+        "repeat": "no-repeat"
+      }
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "rgba(7, 11, 24, 0.55)"
+    },
+    "bgSpeed": {
+      "type": "number",
+      "default": 0.3
+    },
+    "intensity": {
+      "type": "number",
+      "default": 100
+    },
+    "autoDepth": {
+      "type": "boolean",
+      "default": true
+    },
+    "smooth": {
+      "type": "boolean",
+      "default": true
+    },
+    "mobileMode": {
+      "type": "string",
+      "enum": [
+        "full",
+        "reduced",
+        "off"
+      ],
+      "default": "reduced"
+    },
+    "clip": {
+      "type": "boolean",
+      "default": true
+    },
+    "editorMotion": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true,
+    "html": false
+  },
+  "example": {},
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

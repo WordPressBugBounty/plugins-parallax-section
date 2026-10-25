@@ -4,7 +4,7 @@
   "title": "Parallax Section",
   "description": "Parallax scrolling effects in section.",
   "category": "parallax-sections",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "keywords": [
     "parallax scroll",
     "background effect",
@@ -20,6 +20,10 @@
     "speed": {
       "type": "number",
       "default": 0.6
+    },
+    "smooth": {
+      "type": "boolean",
+      "default": true
     },
     "verticalAlign": {
       "type": "string",
