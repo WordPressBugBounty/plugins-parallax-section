@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 2.2.0
+Stable tag: 2.3.0
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -28,6 +28,7 @@ You can easily create a parallax section with this plugin.
 * Parallax CTA (Pro) — a conversion band with a magnetic button, animated aurora and converging orbs, in four styles.
 * Parallax Cube (Pro) — a 3D cube or prism that turns to reveal each content face, with tabs, drag and autoplay.
 * Parallax Skills Cloud (Pro) — skill bubbles that drift on a spring field and scatter from the cursor, in five styles.
+* Horizontal Scroll Parallax (Pro) — the section pins while you scroll down and its cards slide sideways, with Showcase, Timeline, Gallery and Story styles, drag, keyboard and navigation.
 
 
 **[Demos](https://bblockswp.com/demo/parallax-section/)**
@@ -119,6 +120,14 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 == Changelog ==
 
+= 2.3.0 - 31 October 2026 =
+* New Pro block: Horizontal Scroll Parallax — the section pins while you scroll down and its cards slide sideways
+* Four ready-made styles: Showcase, Timeline (line fills as you scroll), Gallery and Story (background colour changes per card)
+* Card effects: Focus, 3D Tilt and Reveal, plus image depth parallax, card numbers and a moving background headline
+* Navigation: numbers or dots, arrows, progress bar or counter, drag to scroll, keyboard arrows and snap to card
+* Layout controls per device: card width and height, gap, side space, radius, card overlay, section padding and margin
+* Mobile: keep pinning, swipe the row, or stack the cards; respects the reduced-motion setting
+
 = 2.2.0 - 25 October 2026 =
 * New free block: Parallax Layers — put any blocks inside and each one moves at its own depth as you scroll, with per-layer speed, direction and fade
 * New: "Smooth motion" option for the Parallax Section block — effects glide toward the scroll position instead of jumping (on by default)
@@ -195,6 +204,9 @@ Please report security bugs found in the source code of the Parallax Section blo
 * Initial Release.
 
 == Upgrade Notice ==
+
+= 2.3.0 =
+New Pro block: Horizontal Scroll Parallax — pinned sections whose cards slide sideways, in four styles.
 
 = 2.2.0 =
 New free Parallax Layers block, a Smooth motion option for every effect, and a fix for a visitor-side JavaScript error.

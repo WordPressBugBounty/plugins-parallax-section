@@ -1,0 +1,348 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "psb/horizontal-scroll-parallax",
+  "title": "Horizontal Scroll Parallax",
+  "description": "The section pins while scrolling down and its cards slide sideways, with parallax depth on images.",
+  "category": "parallax-sections",
+  "version": "2.3.0",
+  "keywords": [
+    "horizontal",
+    "scroll",
+    "parallax",
+    "sideways",
+    "pin",
+    "portfolio",
+    "timeline",
+    "gallery",
+    "cards"
+  ],
+  "textdomain": "parallax-section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "styleSl": {
+      "type": "string",
+      "enum": [
+        "showcase",
+        "timeline",
+        "gallery",
+        "story"
+      ],
+      "default": "showcase"
+    },
+    "showIntro": {
+      "type": "boolean",
+      "default": true
+    },
+    "intro": {
+      "type": "object",
+      "default": {
+        "eyebrow": "Selected work — 2026",
+        "title": "Projects that move people.",
+        "text": "Brands, products and places we designed and launched this year. Keep scrolling.",
+        "btnText": "Start a project",
+        "btnUrl": "#",
+        "newTab": false
+      }
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        {
+          "image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1400&q=80&auto=format&fit=crop",
+          "imageAlt": "Atlas Museum",
+          "year": "",
+          "eyebrow": "Architecture · Identity",
+          "title": "Atlas Museum",
+          "text": "",
+          "btnText": "",
+          "btnUrl": "",
+          "newTab": false
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1400&q=80&auto=format&fit=crop",
+          "imageAlt": "Prism Paints",
+          "year": "",
+          "eyebrow": "Branding · Packaging",
+          "title": "Prism Paints",
+          "text": "",
+          "btnText": "",
+          "btnUrl": "",
+          "newTab": false
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1400&q=80&auto=format&fit=crop",
+          "imageAlt": "Haven Homes",
+          "year": "",
+          "eyebrow": "Real estate · Website",
+          "title": "Haven Homes",
+          "text": "",
+          "btnText": "",
+          "btnUrl": "",
+          "newTab": false
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1400&q=80&auto=format&fit=crop",
+          "imageAlt": "Nova Audio",
+          "year": "",
+          "eyebrow": "Product launch · 3D",
+          "title": "Nova Audio",
+          "text": "",
+          "btnText": "",
+          "btnUrl": "",
+          "newTab": false
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&q=80&auto=format&fit=crop",
+          "imageAlt": "Ember Kitchen",
+          "year": "",
+          "eyebrow": "Hospitality · Interior",
+          "title": "Ember Kitchen",
+          "text": "",
+          "btnText": "",
+          "btnUrl": "",
+          "newTab": false
+        }
+      ]
+    },
+    "cardWidth": {
+      "type": "object",
+      "default": {
+        "desktop": "30vw",
+        "tablet": "46vw",
+        "mobile": "78vw"
+      }
+    },
+    "cardHeight": {
+      "type": "object",
+      "default": {
+        "desktop": "",
+        "tablet": "",
+        "mobile": ""
+      }
+    },
+    "gap": {
+      "type": "object",
+      "default": {
+        "desktop": "28px",
+        "tablet": "24px",
+        "mobile": "16px"
+      }
+    },
+    "sideSpace": {
+      "type": "object",
+      "default": {
+        "desktop": "6vw",
+        "tablet": "5vw",
+        "mobile": "20px"
+      }
+    },
+    "sectionPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "72px",
+          "right": "0px",
+          "bottom": "72px",
+          "left": "0px"
+        },
+        "tablet": {
+          "top": "56px",
+          "right": "0px",
+          "bottom": "56px",
+          "left": "0px"
+        },
+        "mobile": {
+          "top": "40px",
+          "right": "0px",
+          "bottom": "40px",
+          "left": "0px"
+        }
+      }
+    },
+    "sectionMargin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "tablet": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "mobile": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        }
+      }
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "rtl",
+        "ltr"
+      ],
+      "default": "rtl"
+    },
+    "distance": {
+      "type": "number",
+      "default": 100
+    },
+    "smooth": {
+      "type": "boolean",
+      "default": true
+    },
+    "snap": {
+      "type": "boolean",
+      "default": false
+    },
+    "mobileMode": {
+      "type": "string",
+      "enum": [
+        "pin",
+        "swipe",
+        "stack"
+      ],
+      "default": "swipe"
+    },
+    "effect": {
+      "type": "string",
+      "enum": [
+        "none",
+        "focus",
+        "tilt",
+        "reveal"
+      ],
+      "default": "focus"
+    },
+    "imageDepth": {
+      "type": "number",
+      "default": 40
+    },
+    "bigText": {
+      "type": "string",
+      "default": "Selected Work"
+    },
+    "bigTextStyle": {
+      "type": "string",
+      "enum": [
+        "outline",
+        "solid"
+      ],
+      "default": "outline"
+    },
+    "numbers": {
+      "type": "boolean",
+      "default": true
+    },
+    "colorShift": {
+      "type": "boolean",
+      "default": false
+    },
+    "shiftColors": {
+      "type": "array",
+      "default": [
+        "#0f172a",
+        "#3b0764",
+        "#064e3b",
+        "#7c2d12"
+      ]
+    },
+    "nav": {
+      "type": "string",
+      "enum": [
+        "none",
+        "dots",
+        "numbers"
+      ],
+      "default": "numbers"
+    },
+    "arrows": {
+      "type": "boolean",
+      "default": true
+    },
+    "progress": {
+      "type": "string",
+      "enum": [
+        "none",
+        "bar",
+        "counter"
+      ],
+      "default": "bar"
+    },
+    "drag": {
+      "type": "boolean",
+      "default": true
+    },
+    "keyboard": {
+      "type": "boolean",
+      "default": true
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "#0b0b0f"
+      }
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#f5f5f4"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#d4ff3f"
+    },
+    "cardBackground": {
+      "type": "string",
+      "default": "#1c1917"
+    },
+    "cardOverlay": {
+      "type": "object",
+      "default": {
+        "type": "gradient",
+        "gradient": "linear-gradient(0deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0) 70%)"
+      }
+    },
+    "cardRadius": {
+      "type": "string",
+      "default": "20px"
+    },
+    "introTitleTypo": {
+      "type": "object",
+      "default": {}
+    },
+    "cardTitleTypo": {
+      "type": "object",
+      "default": {}
+    },
+    "cardTextTypo": {
+      "type": "object",
+      "default": {}
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true,
+    "html": false
+  },
+  "example": {},
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}
