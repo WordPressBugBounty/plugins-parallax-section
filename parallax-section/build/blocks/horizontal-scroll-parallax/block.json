@@ -2,10 +2,10 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "psb/horizontal-scroll-parallax",
-  "title": "Horizontal Scroll Parallax",
+  "title": "Horizontal Scroll Parallax (Pro)",
   "description": "The section pins while scrolling down and its cards slide sideways, with parallax depth on images.",
   "category": "parallax-sections",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "keywords": [
     "horizontal",
     "scroll",

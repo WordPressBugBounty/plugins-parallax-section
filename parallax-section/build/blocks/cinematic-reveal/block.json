@@ -1,0 +1,301 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "psb/cinematic-reveal",
+  "title": "Cinematic Reveal (Pro)",
+  "description": "Your image or video grows from a card, circle or giant text to full screen as visitors scroll.",
+  "category": "parallax-sections",
+  "version": "2.4.0",
+  "keywords": [
+    "reveal",
+    "zoom",
+    "mask",
+    "video",
+    "hero",
+    "fullscreen",
+    "scroll",
+    "parallax",
+    "cinematic"
+  ],
+  "textdomain": "parallax-section",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "styleSl": {
+      "type": "string",
+      "enum": [
+        "card",
+        "textmask",
+        "portal",
+        "shutter",
+        "gallery"
+      ],
+      "default": "card"
+    },
+    "media": {
+      "type": "object",
+      "default": {
+        "type": "image",
+        "image": "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=2000&q=80&auto=format&fit=crop",
+        "alt": "A road through the desert",
+        "video": "",
+        "poster": "",
+        "focalX": 50,
+        "focalY": 50
+      }
+    },
+    "maskText": {
+      "type": "string",
+      "default": "EXPLORE"
+    },
+    "maskWeight": {
+      "type": "number",
+      "default": 900
+    },
+    "maskLetter": {
+      "type": "number",
+      "default": 0
+    },
+    "gallery": {
+      "type": "array",
+      "default": [
+        {
+          "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1000&q=80&auto=format&fit=crop",
+          "imageAlt": "Paris"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1000&q=80&auto=format&fit=crop",
+          "imageAlt": "Bali"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=1000&q=80&auto=format&fit=crop",
+          "imageAlt": "Fujiyoshida"
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=1000&q=80&auto=format&fit=crop",
+          "imageAlt": "Lago di Braies"
+        }
+      ]
+    },
+    "strips": {
+      "type": "number",
+      "default": 5
+    },
+    "showIntro": {
+      "type": "boolean",
+      "default": true
+    },
+    "intro": {
+      "type": "object",
+      "default": {
+        "eyebrow": "New collection — 2026",
+        "title": "Made for the open road.",
+        "text": "Scroll to step inside."
+      }
+    },
+    "showOverlay": {
+      "type": "boolean",
+      "default": true
+    },
+    "overlay": {
+      "type": "object",
+      "default": {
+        "eyebrow": "Route 66 edition",
+        "title": "Go further than the map.",
+        "text": "Explore the routes, cabins and gear we built for long journeys.",
+        "btnText": "Explore the collection",
+        "btnUrl": "#",
+        "newTab": false
+      }
+    },
+    "overlayPos": {
+      "type": "string",
+      "enum": [
+        "bottom-left",
+        "center",
+        "bottom-center"
+      ],
+      "default": "bottom-left"
+    },
+    "distance": {
+      "type": "number",
+      "default": 150
+    },
+    "hold": {
+      "type": "number",
+      "default": 30
+    },
+    "smooth": {
+      "type": "boolean",
+      "default": true
+    },
+    "mediaZoom": {
+      "type": "number",
+      "default": 20
+    },
+    "textParallax": {
+      "type": "boolean",
+      "default": true
+    },
+    "mobileMode": {
+      "type": "string",
+      "enum": [
+        "full",
+        "simple"
+      ],
+      "default": "full"
+    },
+    "scrollHint": {
+      "type": "boolean",
+      "default": true
+    },
+    "startWidth": {
+      "type": "object",
+      "default": {
+        "desktop": 56,
+        "tablet": 70,
+        "mobile": 86
+      }
+    },
+    "startRadius": {
+      "type": "string",
+      "default": "28px"
+    },
+    "endInset": {
+      "type": "string",
+      "default": "0px"
+    },
+    "endRadius": {
+      "type": "string",
+      "default": "0px"
+    },
+    "background": {
+      "type": "object",
+      "default": {
+        "type": "solid",
+        "color": "#0a0a0b"
+      }
+    },
+    "textColor": {
+      "type": "string",
+      "default": "#f5f5f4"
+    },
+    "accentColor": {
+      "type": "string",
+      "default": "#f5c451"
+    },
+    "mediaOverlay": {
+      "type": "object",
+      "default": {
+        "type": "gradient",
+        "gradient": "linear-gradient(0deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 70%)"
+      }
+    },
+    "contentWidth": {
+      "type": "string",
+      "default": "1200px"
+    },
+    "sectionPadding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "72px",
+          "right": "6vw",
+          "bottom": "72px",
+          "left": "6vw"
+        },
+        "tablet": {
+          "top": "56px",
+          "right": "40px",
+          "bottom": "56px",
+          "left": "40px"
+        },
+        "mobile": {
+          "top": "40px",
+          "right": "20px",
+          "bottom": "40px",
+          "left": "20px"
+        }
+      }
+    },
+    "sectionMargin": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "tablet": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        },
+        "mobile": {
+          "top": "0px",
+          "right": "0px",
+          "bottom": "0px",
+          "left": "0px"
+        }
+      }
+    },
+    "introTitleTypo": {
+      "type": "object",
+      "default": {}
+    },
+    "overlayTitleTypo": {
+      "type": "object",
+      "default": {}
+    },
+    "textTypo": {
+      "type": "object",
+      "default": {}
+    },
+    "btnTypo": {
+      "type": "object",
+      "default": {}
+    },
+    "btnColors": {
+      "type": "object",
+      "default": {
+        "color": "#111111",
+        "bgType": "solid",
+        "bg": "#ffffff"
+      }
+    },
+    "btnHoverColors": {
+      "type": "object",
+      "default": {
+        "color": "#111111",
+        "bgType": "solid",
+        "bg": "#ffffff"
+      }
+    },
+    "btnPadding": {
+      "type": "object",
+      "default": {}
+    },
+    "btnRadius": {
+      "type": "object",
+      "default": {}
+    }
+  },
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "anchor": true,
+    "html": false
+  },
+  "example": {},
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./view.css",
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
+}

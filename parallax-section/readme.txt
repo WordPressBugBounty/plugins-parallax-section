@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 2.3.0
+Stable tag: 2.4.0
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -29,6 +29,7 @@ You can easily create a parallax section with this plugin.
 * Parallax Cube (Pro) — a 3D cube or prism that turns to reveal each content face, with tabs, drag and autoplay.
 * Parallax Skills Cloud (Pro) — skill bubbles that drift on a spring field and scatter from the cursor, in five styles.
 * Horizontal Scroll Parallax (Pro) — the section pins while you scroll down and its cards slide sideways, with Showcase, Timeline, Gallery and Story styles, drag, keyboard and navigation.
+* Cinematic Reveal (Pro) — your image or video grows from a card, circle, giant word, shutter strips or a photo collage to full screen as visitors scroll.
 
 
 **[Demos](https://bblockswp.com/demo/parallax-section/)**
@@ -120,6 +121,16 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 == Changelog ==
 
+= 2.4.0 - 10 November 2026 =
+* New Pro block: Cinematic Reveal — the section pins and your image or video grows to full screen as visitors scroll
+* Five styles: Card to Fullscreen, Text Mask (zoom through a giant word), Circle Portal, Shutter and Window Gallery
+* Intro text before the reveal, and a headline with a button on the full-screen media; the button has its own typography, colours, hover colours, padding and radius
+* Scroll distance, hold, media zoom, focal point, end frame and smooth motion; plays the same in the editor as on the live page
+* Mobile: full reveal or a simple, still layout on phones; respects the reduced-motion setting
+* Fixed: pinned sections (Horizontal Scroll Parallax, Cinematic Reveal) now stay pinned on themes that hide page overflow
+* Fixed: a JavaScript error on the plugin's Account page
+* Updated: Freemius SDK to 2.13.5
+
 = 2.3.0 - 31 October 2026 =
 * New Pro block: Horizontal Scroll Parallax — the section pins while you scroll down and its cards slide sideways
 * Four ready-made styles: Showcase, Timeline (line fills as you scroll), Gallery and Story (background colour changes per card)
@@ -204,6 +215,9 @@ Please report security bugs found in the source code of the Parallax Section blo
 * Initial Release.
 
 == Upgrade Notice ==
+
+= 2.4.0 =
+New Pro block: Cinematic Reveal — media that grows to full screen as you scroll, in five styles. Plus a pinning fix for themes that hide overflow.
 
 = 2.3.0 =
 New Pro block: Horizontal Scroll Parallax — pinned sections whose cards slide sideways, in four styles.
