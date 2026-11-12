@@ -13,9 +13,14 @@ $bgCSS = PSB\GetCSS::getBackgroundCSS($background);
 $paddingCSS = PSB\GetCSS::getSpaceCSS($padding);
 
 $mainSl = "#$id";
+// Default effect: the 1920px-tall background layer must stay inside the section
+// from the first paint (before view.js runs), not spill over the page.
+$isDefault = empty( $selectedTheme ) || 'default' === $selectedTheme;
+$clipCSS = $isDefault ? 'position: relative; overflow: hidden;' : '';
 $styles = "
   $mainSl{
     min-height: $minHeight;
+    $clipCSS
   }
   $mainSl .psbParallaxSection{
     justify-content: $verticalAlign;
@@ -27,40 +32,6 @@ $styles = "
     $bgCSS
   }
 ";
-
-// Style disappearing problem
-global $allowedposttags;
-$allowed_html = wp_parse_args( ['style' => [], 'iframe' => [
-  'allowfullscreen' => true,
-  'allowpaymentrequest' => true,
-  'height' => true,
-  'loading' => true,
-  'name' => true,
-  'referrerpolicy' => true,
-  'sandbox' => true,
-  'src' => true,
-  'srcdoc' => true,
-  'width' => true,
-  'aria-controls' => true,
-  'aria-current' => true,
-  'aria-describedby' => true,
-  'aria-details' => true,
-  'aria-expanded' => true,
-  'aria-hidden' => true,
-  'aria-label' => true,
-  'aria-labelledby' => true,
-  'aria-live' => true,
-  'class' => true,
-  'data-*' => true,
-  'dir' => true,
-  'hidden' => true,
-  'id' => true,
-  'lang' => true,
-  'style' => true,
-  'title' => true,
-  'role' => true,
-  'xml:lang' => true
-] ], $allowedposttags );
 
 ?>
 <div
@@ -77,6 +48,15 @@ $allowed_html = wp_parse_args( ['style' => [], 'iframe' => [
   <div class='psbParallaxImg' data-speed='<?php echo esc_attr( $speed ) ?>'></div>
 
   <div class='psbParallaxSection'>
-    <?php echo wp_kses( $content, $allowed_html ); ?>
+    <?php // One wrapper inside the flex column (as in the editor), so the blocks' margins collapse normally instead of doubling. ?>
+    <div class='psbParallaxSection__content'>
+    <?php
+    // $content is the inner blocks, already rendered (and filtered when saved) by
+    // WordPress — print it as is, like core container blocks do. Running it through
+    // wp_kses() again stripped SVG (social icons), form fields, video sources, etc.
+    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    echo $content;
+    ?>
+    </div>
   </div>
 </div>

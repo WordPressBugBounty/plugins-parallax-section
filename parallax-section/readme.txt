@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 2.4.0
+Stable tag: 2.4.1
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -121,6 +121,31 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 == Changelog ==
 
+= 2.4.1 - 12 November 2026 =
+* Fixed: the Particle and Leaf effects now keep their text in view on long pages and when a page has more than one Particle section
+* Fixed: Parallax Cube autoplay no longer stops whenever the mouse is anywhere over the section; it pauses only while you point at the cube or its controls
+* Fixed: in the Parallax Testimonials Coverflow Deck style, the front card now shows the card background you choose instead of always turning dark navy
+* Fixed: Parallax Section no longer removes icons and other SVG graphics (social icons, icon blocks) from the content inside it
+* Fixed: Parallax Section effects now match the editor — the same height and the same spacing between blocks on the live page; the vertical alignment buttons now work for every effect
+* Fixed: a Parallax Section speed of 0 now keeps the background still, as the setting says
+* Fixed: the Particle and Leaf effects now respect the visitor's "reduce motion" setting, and the Particle effect pauses while it is off screen
+* Fixed: long text in the Leaf effect is no longer cut off on phones
+* Fixed: the Default effect's background no longer spills out of the section while the page loads
+* Fixed: Parallax Section effects now start even when a caching plugin delays the page's scripts
+* Fixed: the Blur effect now lines up correctly when content above it loads late
+* Improved: the Particle cube position settings are now called "Distance from top" and "Distance from right", and the phone values apply on all phone sizes
+* Fixed: Parallax Layers now spaces its layers on the live page exactly as in the editor — by the "Gap between layers" setting, without extra theme margins
+* Fixed: Parallax Cube's Mouse scroll pin now stays pinned on themes that hide page overflow
+* Fixed: in the editor, the Parallax Cube face you are previewing no longer loses its place when you add or remove that face's image
+* Fixed: Parallax Testimonials' Mouse scroll pin now stays pinned on themes that hide page overflow
+* Fixed: Parallax Testimonials autoplay now pauses only while you point at a card or the controls, not anywhere across the section's content area
+* Fixed: in the Parallax Tilt Card Split Media style on phones, the scrolling card image no longer shows its edge
+* Fixed: in the editor, changing a Parallax Tilt Card's alignment no longer makes its scrolling images show their edges
+* Fixed: in the editor, changing a Parallax CTA's section padding now also limits how far its content floats, so the band never drifts past the section edge
+* Fixed: in the Parallax Skills Cloud Magnetic Tag Wall style, tags pulled toward the pointer no longer slide on top of each other
+* Fixed: in the editor, changing Horizontal Scroll Parallax's direction, mobile mode, background text style or card height no longer switches off the Focus / 3D Tilt card preview
+* Fixed: better compatibility with themes and other plugins — the Parallax Section styles no longer use a shared "fadeIn" animation name or change every dashicon on the page, and the Particle / Leaf effects no longer repeat the same HTML id when a page has more than one
+
 = 2.4.0 - 10 November 2026 =
 * New Pro block: Cinematic Reveal — the section pins and your image or video grows to full screen as visitors scroll
 * Five styles: Card to Fullscreen, Text Mask (zoom through a giant word), Circle Portal, Shutter and Window Gallery
@@ -215,6 +240,9 @@ Please report security bugs found in the source code of the Parallax Section blo
 * Initial Release.
 
 == Upgrade Notice ==
+
+= 2.4.1 =
+Fixes the Particle and Leaf effects losing their text on long pages or with more than one Particle section on a page, Parallax Cube autoplay stopping while visitors scroll with the mouse over the page, and the Testimonials Coverflow front card ignoring the card background. Parallax Section now keeps icons inside it, matches the editor on the live page and respects "reduce motion".
 
 = 2.4.0 =
 New Pro block: Cinematic Reveal — media that grows to full screen as you scroll, in five styles. Plus a pinning fix for themes that hide overflow.

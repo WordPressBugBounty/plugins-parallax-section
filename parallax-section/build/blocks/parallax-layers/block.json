@@ -5,7 +5,7 @@
   "title": "Parallax Layers",
   "description": "Put any blocks inside and give each one its own parallax speed for real multi-layer depth on scroll.",
   "category": "parallax-sections",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "keywords": [
     "parallax",
     "layers",
