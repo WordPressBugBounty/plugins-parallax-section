@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Parallax Section Block – Add Parallax Scrolling Effects to Sections
  * Description: Makes background element scrolls slower than foreground content.
- * Version: 2.4.1
+ * Version: 2.4.2
  * Author: bPlugins
  * Author URI: https://bplugins.com
  * License: GPLv3
@@ -27,7 +27,7 @@ if ( function_exists( 'ps_fs' ) ) {
 	ps_fs()->set_basename( false, __FILE__ );
 	
 } else {
-define( 'PSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.4.1' );
+define( 'PSB_VERSION', isset( $_SERVER['HTTP_HOST'] ) && 'localhost' === $_SERVER['HTTP_HOST'] ? time() : '2.4.2' );
 define( 'PSB_DIR_URL', plugin_dir_url( __FILE__ ) );
 define( 'PSB_DIR_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PARALLAX_HAS_PRO', file_exists( dirname(__FILE__) . '/vendor/freemius/start.php' ) );
@@ -178,10 +178,18 @@ if( !class_exists( 'PSBPlugin' ) ){
 	new PSBPlugin();
 }
 
-// "Help & Demos" link beside Deactivate on the Plugins screen → the plugin dashboard.
+// "Help & Demos" and BFCM links beside Deactivate on the Plugins screen.
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), function( $links ) {
 	if ( current_user_can( 'manage_options' ) ) {
 		$links[] = '<a href="' . esc_url( admin_url( 'edit.php?post_type=parallax-section&page=parallax-section-dashboard#/welcome' ) ) . '" style="color:#FF7A00;font-weight:bold;">' . esc_html__( 'Help & Demos', 'parallax-section' ) . '</a>';
+
+		$expiry     = class_exists( '\PSB\Admin\PSB_PromoBanner' ) ? \PSB\Admin\PSB_PromoBanner::EXPIRATION_DATE : '2026-12-05 23:59:59';
+		$is_expired = time() > strtotime( $expiry );
+
+		if ( ! $is_expired && ( ! function_exists( 'psIsPremium' ) || ! psIsPremium() ) ) {
+			$bfcm_url = 'https://bplugins.com/products/parallax-section/pricing/?utm_source=admin&utm_medium=plugins&utm_campaign=bfcm2026';
+			$links[]  = '<a href="' . esc_url( $bfcm_url ) . '" target="_blank" rel="noopener noreferrer" style="color:#d63638;font-weight:bold;">' . esc_html__( 'Upgrade to Pro & Save Up to 45% This Black Friday!', 'parallax-section' ) . '</a>';
+		}
 	}
 	return $links;
 } );
@@ -202,7 +210,8 @@ new PSB_DisabledBlocks();
 
 }
 
-require_once PSB_DIR_PATH . '/includes/Menu.php';
+require_once PSB_DIR_PATH . 'includes/BFCMCamping.php';
+require_once PSB_DIR_PATH . 'includes/Menu.php';
 
 
 

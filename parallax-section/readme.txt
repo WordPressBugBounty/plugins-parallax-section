@@ -4,7 +4,7 @@ Donate link: https://www.buymeacoffee.com/abuhayat
 Tags: block, parallax scroll, parallax effect, background effect, Gutenberg block
 Requires at least: 6.5
 Tested up to: 7.1
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 Requires PHP: 7.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -120,6 +120,11 @@ Please report security bugs found in the source code of the Parallax Section blo
 
 
 == Changelog ==
+
+= 2.4.2 - 16 November 2026 =
+* Added: Black Friday & Cyber Monday (BFCM) campaign banner on the admin dashboard with exclusive Pro deals
+* Added: Quick "Upgrade to Pro & Save Up to 45% This Black Friday!" action link on the Plugins page
+* Improved: Admin dashboard layout compatibility and dismiss handling for promotional notices
 
 = 2.4.1 - 12 November 2026 =
 * Fixed: the Particle and Leaf effects now keep their text in view on long pages and when a page has more than one Particle section
@@ -240,6 +245,9 @@ Please report security bugs found in the source code of the Parallax Section blo
 * Initial Release.
 
 == Upgrade Notice ==
+
+= 2.4.2 =
+Adds Black Friday & Cyber Monday (BFCM) promotion banner on the dashboard and quick upgrade action link on the Plugins page.
 
 = 2.4.1 =
 Fixes the Particle and Leaf effects losing their text on long pages or with more than one Particle section on a page, Parallax Cube autoplay stopping while visitors scroll with the mouse over the page, and the Testimonials Coverflow front card ignoring the card background. Parallax Section now keeps icons inside it, matches the editor on the live page and respects "reduce motion".

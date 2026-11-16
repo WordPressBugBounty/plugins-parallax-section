@@ -56,7 +56,11 @@ class Menu {
 		}
 	}
 
-	public function renderDashboardPage(){ ?>
+	public function renderDashboardPage(){
+		if ( class_exists( '\PSB\Admin\PSB_PromoBanner' ) ) {
+			\PSB\Admin\PSB_PromoBanner::render_banner();
+		}
+		?>
 		<div
 			id='psbDashboard'
 			data-info='<?php echo esc_attr( wp_json_encode( [
